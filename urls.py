@@ -22,7 +22,10 @@ urlpatterns = patterns('',
     
     
     (r'^$', direct_to_template, {'template': 'main_page.html'}),        #main
-    (r'^about/', direct_to_template, {'template': 'about_page.html'}),  #about
+    (r'^about/', direct_to_template, {'template': 'about/about_page.html'}),  #about
+    (r'^about_news/', direct_to_template, {'template': 'about/about_news_page.html'}),  #Новости о разработке
+    (r'^null/', direct_to_template, {'template': 'null_page.html'}),    #пустая страница
+    
     
     #(r'^business_trips/', include('report.business_trips.urls')),       #журнал поездок
     

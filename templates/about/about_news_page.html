@@ -1,0 +1,41 @@
+{# about_news_page #}
+{% extends "base.html" %}
+{% block title %}devel_news{% endblock %}
+{% block head %}Что нового{% endblock %}
+
+
+
+
+{% block sidebar %}
+<div id="main_nav">
+    <!-- навигация -->
+    <!--<div id="nav_title"><p class="c_title">Главная</p></div>-->
+        
+    <div id="nav_items">
+        {% include "about/menu_list.html" %}
+    </div>
+</div>
+{% endblock %}
+
+{% block main_content %}
+   
+    
+    <!--<div id="content_title"><p class="c_title">Главная</p></div>-->
+    
+    <div id="content_items">
+    
+        <br> 
+    <h3>v 0.01 - 2010.10.13</h3> 
+        <ul> 
+            <li>Старт проекта</li> 
+        </ul> 
+        
+        
+    </div>
+ 
+{% endblock %}
+
+
+
+
+

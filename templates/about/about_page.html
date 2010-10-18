@@ -1,6 +1,7 @@
+{# about_page #}
 {% extends "base.html" %}
-{% block title %}Главная{% endblock %}
-{% block head %}Главная{% endblock %}
+{% block title %}О проекте{% endblock %}
+{% block head %}О проекте{% endblock %}
 
 
 
@@ -11,14 +12,7 @@
     <!--<div id="nav_title"><p class="c_title">Главная</p></div>-->
         
     <div id="nav_items">
-        <p><a class="nav_link" href="/null/">111</a></p>
-        <p><a class="nav_link" href="/null/">222</a></p>
-        <!--<p><a class="nav_link" href="/projects/">Проекты</a></p>
-        <p><a class="nav_link" href="/electronic_modules/">Модули</a></p>
-        <p><a class="nav_link" href="/elc/">Склад</a></p>
-        <p><a class="nav_link" href="/o_data/">Другие данные</a></p>
-        <p><a class="nav_link" href="/service/">Сервис</a></p>
-        <p><a class="nav_link" href="/help/">Помощь</a></p>-->
+        {% include "about/menu_list.html" %}
     </div>
 </div>
 {% endblock %}
