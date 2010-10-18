@@ -1,0 +1,135 @@
+@import url('reset.css');
+
+/*--------------------------------------------------------------------*/
+/*-------------------- main ------------------------------------------*/
+body {
+    background-color: #f8f8f8;
+    margin: 10px;
+    font-family     : Verdana, Arial, Helvetica, sans-serif;
+    color: #444444;/*#7d7d7d;*/
+    /*border: 1px solid #7d7d7d;*/
+}
+
+/*-------------------- end main --------------------------------------*/
+/*--------------------------------------------------------------------*/
+
+
+/*--------------------------------------------------------------------*/
+/*-------------------- links -----------------------------------------*/
+a {
+font-size: 12px;
+color: #444444;/*#d7d7d7;*/
+text-decoration: none;
+}
+/*-------------------- end links -------------------------------------*/
+/*--------------------------------------------------------------------*/
+
+
+/*--------------------------------------------------------------------*/
+/*-------------------- header ----------------------------------------*/
+div#header {
+height: 160px;
+margin: 10px;
+/*border: 1px solid #7d7d7d;*/
+}
+
+div#h_content {
+height: 120px;
+margin: 5px;
+/*border: 1px solid #7d7d7d;*/
+}
+
+div#logo {
+height: 110px;
+width: 110px;
+float: left;
+/*margin-left: 10px;*/
+/*background: url("../images/comcon_logo.png") no-repeat;*/
+/*border: 1px solid #7d7d7d;*/
+}
+
+div#h_title {
+/*background: url("../images/comcon_logo.png") no-repeat;*/
+height: 110px;
+/*border: 1px solid #7d7d7d;*/
+margin-left: 113px;
+}
+
+div#h_logo {
+text-align: center;
+height: 20px;
+margin-top: 10px;
+}
+
+div#h_text {
+text-align: center;
+}
+
+div#h_nav {
+height: 20px;
+margin: 5px;
+padding-left: 5px;
+/*border: 1px solid #7d7d7d;*/
+}
+
+/*-------------------- end header ------------------------------------*/
+/*--------------------------------------------------------------------*/
+
+
+/*--------------------------------------------------------------------*/
+/*-------------------- central ---------------------------------------*/
+div#central {
+margin: 10px;
+/*border: 1px solid #7d7d7d;*/
+/*min-height: 600px;*/
+}
+
+/*----- sidebar ---------*/
+div#sidebar {
+width: 180px;
+margin: 5px;
+float: left;
+padding: 5px;
+/*border: 1px solid #7d7d7d;*/
+}
+/*----- end sidebar -----*/
+
+/*----- content ---------*/
+div#content {
+/*border: 1px solid #7d7d7d;*/
+margin: 5px 5px 5px 200px;
+padding: 5px;
+}
+
+.content{
+font-size: 12px;
+
+color: #444444;/*#7d7d7d;*/
+text-decoration: none;
+}
+/*----- end content -----*/
+
+/*-------------------- end centrl ------------------------------------*/
+/*--------------------------------------------------------------------*/
+
+
+/*--------------------------------------------------------------------*/
+/*-------------------- footer ----------------------------------------*/
+div#footer {
+/*border: 1px solid #7d7d7d;*/
+margin: 10px;
+/*padding: 10px;*/
+}
+
+div#f_info {
+text-align: center;
+padding: 5px;
+}
+
+div#version {
+font-size: 10px;
+text-align: right;
+}
+
+/*-------------------- end footer -------------------------------------*/
+/*--------------------------------------------------------------------*/
