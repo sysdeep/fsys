@@ -16,7 +16,7 @@ vertical-align: baseline;
 background: transparent;
 }
 body {
-line-height: 1;
+line-height: 15px;
 }
 ol, ul {
 list-style: none;
