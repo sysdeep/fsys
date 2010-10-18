@@ -15,6 +15,31 @@ body {
 
 
 /*--------------------------------------------------------------------*/
+/*-------------------- fonts -----------------------------------------*/
+h1 {
+font-size: 25px;
+font-weight: bold;
+margin: 7px 0px;
+}
+
+h2 {
+font-size: 15px;
+font-weight: bold;
+margin: 5px 0px;
+/*display: inline-block;*/
+}
+
+h3 {
+font-size: 10px;
+font-weight: bold;
+margin: 3px 0px;
+}
+/*-------------------- end fonts -------------------------------------*/
+/*--------------------------------------------------------------------*/
+
+
+
+/*--------------------------------------------------------------------*/
 /*-------------------- links -----------------------------------------*/
 a {
 font-size: 12px;
@@ -81,7 +106,8 @@ padding-left: 5px;
 div#central {
 margin: 10px;
 /*border: 1px solid #7d7d7d;*/
-/*min-height: 600px;*/
+min-height: 400px;
+/*height: 100%;*/
 }
 
 /*----- sidebar ---------*/
@@ -99,6 +125,7 @@ div#content {
 /*border: 1px solid #7d7d7d;*/
 margin: 5px 5px 5px 200px;
 padding: 5px;
+
 }
 
 .content{

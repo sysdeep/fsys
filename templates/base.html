@@ -40,7 +40,7 @@
     <div id="h_content" >
         <div id="logo"><a href="/" title="Главная"><img src="/site_media/images/logo.png" alt="Comcon"/></a></div>
         <div id="h_title">
-            <div id="h_logo"><p>Сайт на Django</p></div>
+            <div id="h_logo"><p>Another Life...</p></div>
             <div id="h_text">
                 <h1 class="h_title" >{% block head %}{% endblock %}</h1>
             </div>
@@ -89,8 +89,8 @@
         <p>Deep Studio</p>
         <p>2010</p>
         </div>
-        {# {% load extras %} #}{# мой обработчик шаблона - пока через фильтр #}
-        <div id="version">v. 0.01{# {{ x|pro_version }} #}</div>
+        {% load extras %} {# мой обработчик шаблона - пока через фильтр #}
+        <div id="version">v. {{ x|pro_version }} </div>
     </div>
 {#---------------------------------------------------------------------#}
 
