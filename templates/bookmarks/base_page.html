@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block title %}Bookmarks{% endblock %}
+{% block head %}Bookmarks{% endblock %}
+
+
+
+
+{% block sidebar %}
+<div id="main_nav">
+    <!-- навигация -->
+    <!--<div id="nav_title"><p class="c_title">Главная</p></div>-->
+        
+    <div id="nav_items">
+        <p><a class="nav_link" href="/bookmarks/user/">User_page</a></p>
+        <p><a class="nav_link" href="/null/">222</a></p>
+        <!--<p><a class="nav_link" href="/projects/">Проекты</a></p>
+        <p><a class="nav_link" href="/electronic_modules/">Модули</a></p>
+        <p><a class="nav_link" href="/elc/">Склад</a></p>
+        <p><a class="nav_link" href="/o_data/">Другие данные</a></p>
+        <p><a class="nav_link" href="/service/">Сервис</a></p>
+        <p><a class="nav_link" href="/help/">Помощь</a></p>-->
+    </div>
+</div>
+{% endblock %}
+
+{% block main_content %}
+   
+    
+    <div id="content_title">{% block сtitle %}{% endblock %}</div>
+    <div id="content_items">
+    
+        {% block content %}<!-- content -->{% endblock %}
+        
+    </div>
+ 
+{% endblock %}
+
+
+
+
+

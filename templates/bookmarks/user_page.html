@@ -1,0 +1,40 @@
+{# main_page #}
+{% extends "bookmarks/base_page.html" %}
+
+
+{% block сtitle %} <p class="c_title">Закладки для пользователя {{ username }}</p> {% endblock %}
+
+{% block content %}
+    
+    
+    <div id="add_opt">
+        <!--<a class="line_links" href="#" title="Добавить новую запись о поездке">Добавить запись о поездке для </a>
+        |
+        <a class="line_links" href="#" title="Перейти на страницу настройки пользователя">Изменить запись о пользователе</a>-->
+    </div>
+    
+    {% if bookmarks %}
+        {% for bookmark in bookmarks %}
+            <p><a href="{{ bookmark.link.url }}">{{ bookmark.title }}</a></p>
+        {% endfor %}
+    
+    {% else %}
+        <p>No bookmark found</p>
+    {% endif %}
+         
+    
+    
+{% endblock %}
+
+
+{% block add_content %}
+
+    <!--<h2>Примечания:</h2>
+    <ul style="width: 100%">  
+        <li>На этой странице представлен список поездок, которые совершал заданный пользователь.</li>
+        <li>При щелчке на имени завода произойдет выборка поездок по этому заводу.</li>
+        <li>Для изменений данных об объекте необходимо щелкнуть по надписи "Изменить запись".</li>
+        <li>При щелчке на надписи "Удалить запись" - произойдет удаление записи из базы данных.</li>
+    </ul>-->
+    
+{% endblock %}

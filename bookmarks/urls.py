@@ -1,8 +1,10 @@
 # -*- coding: utf-8 -*-
 from django.conf.urls.defaults import *
-from django.views.generic.simple import direct_to_template
-import os.path
-from settings import site_media#, site_upload, backup_dir
+#from django.views.generic.simple import direct_to_template
+#import os.path
+#from settings import site_media#, site_upload, backup_dir
+
+from bookmarks.views import main_page, user_page
 
 # Uncomment the next two lines to enable the admin:
 # from django.contrib import admin
@@ -21,16 +23,18 @@ urlpatterns = patterns('',
     
     
     
-    (r'^$', direct_to_template, {'template': 'main_page.html'}),        #main
-    (r'^about/', direct_to_template, {'template': 'about/about_page.html'}),  #about
-    (r'^about_news/', direct_to_template, {'template': 'about/about_news_page.html'}),  #Новости о разработке
-    (r'^null/', direct_to_template, {'template': 'null_page.html'}),    #пустая страница
+    (r'^$', main_page),                                                 #main
+    (r'^user/(\w+)/$', user_page),                                      #user_page
+
+    #(r'^about/', direct_to_template, {'template': 'about/about_page.html'}),  #about
+    #(r'^about_news/', direct_to_template, {'template': 'about/about_news_page.html'}),  #Новости о разработке
+    #(r'^null/', direct_to_template, {'template': 'null_page.html'}),    #пустая страница
     
-    (r'^bookmarks/', include('bookmarks.urls')),                        #закладки
+    #(r'^bookmarks/', include('bookmarks.urls')),                        #закладки
     
     #(r'^business_trips/', include('report.business_trips.urls')),       #журнал поездок
     
-    (r'^site_media/(?P<path>.*)$', 'django.views.static.serve',{'document_root': site_media}),
+    #(r'^site_media/(?P<path>.*)$', 'django.views.static.serve',{'document_root': site_media}),
     #(r'^site_upload/(?P<path>.*)$', 'django.views.static.serve',{'document_root': site_upload}),
     #(r'^backup/(?P<path>.*)$', 'django.views.static.serve',{'document_root': backup_dir}),
 )
