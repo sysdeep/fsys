@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}О проекте{% endblock %}
+{% block head %}О проекте{% endblock %}
+
+
+{% block current_about %} class="current" {% endblock %}
+{% block nav_title %}О проекте{% endblock %}
+
+{% block nav_items %}
+    <ul>
+        <li><a href="/about/">О нас</a></li>
+        <li><a href="/about_news/">Что нового</a></li>
+    </ul>
+{% endblock %}
+
+
+{% block main_content %}
+   
+    
+    <div id="content_title">{% block сtitle %}{% endblock %}</div>
+    <div id="content_items">
+    
+        {% block content %}<!-- content -->{% endblock %}
+        
+    </div>
+ 
+{% endblock %}
+
+
+
+
+

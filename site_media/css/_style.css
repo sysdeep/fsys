@@ -1,0 +1,193 @@
+@import url('reset.css');
+
+/*--------------------------------------------------------------------*/
+/*-------------------- main ------------------------------------------*/
+body {
+    background-color: #f8f8f8;
+    margin: 10px;
+    font-family     : Verdana, Arial, Helvetica, sans-serif;
+    color: #444444;/*#7d7d7d;*/
+    /*border: 1px solid #7d7d7d;*/
+}
+
+/*-------------------- end main --------------------------------------*/
+/*--------------------------------------------------------------------*/
+
+
+/*--------------------------------------------------------------------*/
+/*-------------------- fonts -----------------------------------------*/
+h1 {
+font-size: 25px;
+font-weight: bold;
+margin: 7px 0px;
+}
+
+h2 {
+font-size: 15px;
+font-weight: bold;
+margin: 5px 0px;
+/*display: inline-block;*/
+}
+
+h3 {
+font-size: 10px;
+font-weight: bold;
+margin: 3px 0px;
+}
+
+
+/*-------------------- end fonts -------------------------------------*/
+/*--------------------------------------------------------------------*/
+
+
+
+/*--------------------------------------------------------------------*/
+/*-------------------- links -----------------------------------------*/
+a {
+font-size: 12px;
+color: #444444;/*#d7d7d7;*/
+text-decoration: none;
+}
+
+a:link, a:visited, a:active {
+color: #444444;/*#d7d7d7;*/
+text-decoration: none;
+font-weight: bold;
+}
+
+a:hover {
+color: #5d5d5d;
+text-decoration: none;
+font-weight: bold;
+}
+/*-------------------- end links -------------------------------------*/
+/*--------------------------------------------------------------------*/
+
+
+/*--------------------------------------------------------------------*/
+/*-------------------- header ----------------------------------------*/
+div#header {
+height: 160px;
+margin: 10px;
+/*border: 1px solid #7d7d7d;*/
+}
+
+div#h_content {
+height: 120px;
+margin: 5px;
+/*border: 1px solid #7d7d7d;*/
+}
+
+div#logo {
+height: 110px;
+width: 110px;
+float: left;
+/*margin-left: 10px;*/
+/*background: url("../images/comcon_logo.png") no-repeat;*/
+/*border: 1px solid #7d7d7d;*/
+}
+
+div#h_title {
+/*background: url("../images/comcon_logo.png") no-repeat;*/
+height: 110px;
+/*border: 1px solid #7d7d7d;*/
+margin-left: 113px;
+}
+
+div#h_logo {
+text-align: center;
+height: 20px;
+margin-top: 10px;
+}
+
+div#h_text {
+text-align: center;
+}
+
+div#h_nav {
+height: 20px;
+margin: 5px;
+padding-left: 5px;
+/*border: 1px solid #7d7d7d;*/
+}
+
+/*-------------------- end header ------------------------------------*/
+/*--------------------------------------------------------------------*/
+
+
+/*--------------------------------------------------------------------*/
+/*-------------------- central ---------------------------------------*/
+div#central {
+margin: 10px;
+/*border: 1px solid #7d7d7d;*/
+min-height: 400px;
+/*height: 100%;*/
+}
+
+/*----- sidebar ---------*/
+div#sidebar {
+width: 180px;
+margin: 5px;
+float: left;
+padding: 5px;
+/*border: 1px solid #7d7d7d;*/
+}
+/*----- end sidebar -----*/
+
+/*----- content ---------*/
+div#content {
+/*border: 1px solid #7d7d7d;*/
+margin: 5px 5px 5px 200px;
+padding: 5px;
+
+}
+
+.content ul {
+/*-webkit-padding-start: 40px;*/
+list-style-type : disc;
+display: block;
+margin: 10px 25px;
+}
+
+.content ul#nostyle {
+list-style-type : none;
+display: block;
+margin: 10px 25px;
+}
+
+.content li {
+margin: 5px;
+}
+
+.content{
+font-size: 12px;
+/*margin-top: 20px;*/
+color: #444444;/*#7d7d7d;*/
+text-decoration: none;
+}
+/*----- end content -----*/
+
+/*-------------------- end centrl ------------------------------------*/
+/*--------------------------------------------------------------------*/
+
+
+/*--------------------------------------------------------------------*/
+/*-------------------- footer ----------------------------------------*/
+div#footer {
+/*border: 1px solid #7d7d7d;*/
+margin: 10px;
+/*padding: 10px;*/
+}
+
+div#f_info {
+text-align: center;
+padding: 5px;
+}
+
+div#version {
+font-size: 10px;
+text-align: right;
+}
+
+/*-------------------- end footer -------------------------------------*/
+/*--------------------------------------------------------------------*/

@@ -1,193 +1,183 @@
-@import url('reset.css');
+/* 
+	project:   Another Life
+	author:   Diver
+*/
 
-/*--------------------------------------------------------------------*/
-/*-------------------- main ------------------------------------------*/
-body {
-    background-color: #f8f8f8;
-    margin: 10px;
-    font-family     : Verdana, Arial, Helvetica, sans-serif;
-    color: #444444;/*#7d7d7d;*/
-    /*border: 1px solid #7d7d7d;*/
+*{ margin: 0; padding: 0; }* 
+
+body { 
+	font: .8em Tahoma, "Trebuchet MS", Tahoma, sans-serif; 
+	line-height: 1.6em; 
+	background: #fff url(images/bg.gif) repeat-x; 
+	color: #8E8E91; 
 }
 
-/*-------------------- end main --------------------------------------*/
-/*--------------------------------------------------------------------*/
-
-
-/*--------------------------------------------------------------------*/
-/*-------------------- fonts -----------------------------------------*/
-h1 {
-font-size: 25px;
-font-weight: bold;
-margin: 7px 0px;
+a {	
+	color: #EB0000;	
+	background: inherit; 
+	text-decoration: none; 
 }
 
-h2 {
-font-size: 15px;
-font-weight: bold;
-margin: 5px 0px;
-/*display: inline-block;*/
+a:hover { 
+	color: #808080; 
+	background: inherit; 
+	text-decoration: underline; 
 }
 
-h3 {
-font-size: 10px;
-font-weight: bold;
-margin: 3px 0px;
+p { 
+	margin: 0 0 15px 0; 
 }
 
-
-/*-------------------- end fonts -------------------------------------*/
-/*--------------------------------------------------------------------*/
-
-
-
-/*--------------------------------------------------------------------*/
-/*-------------------- links -----------------------------------------*/
-a {
-font-size: 12px;
-color: #444444;/*#d7d7d7;*/
-text-decoration: none;
+h1 { 
+	font: normal 2.8em Georgia, "Times New Roman", Arial; 
+	color: #444; 
 }
 
-a:link, a:visited, a:active {
-color: #444444;/*#d7d7d7;*/
-text-decoration: none;
-font-weight: bold;
+h2 { 
+	font: normal 1.7em Georgia, "Times New Roman", Arial; 
+	margin: 0 0 10px; 
+	padding: 0 0 3px; 
+	color: #333; 
+	border-bottom: 1px solid #eee; 
 }
 
-a:hover {
-color: #5d5d5d;
-text-decoration: none;
-font-weight: bold;
+img { 
+	border: 0; 
 }
-/*-------------------- end links -------------------------------------*/
-/*--------------------------------------------------------------------*/
-
-
-/*--------------------------------------------------------------------*/
-/*-------------------- header ----------------------------------------*/
-div#header {
-height: 160px;
-margin: 10px;
-/*border: 1px solid #7d7d7d;*/
+	
+div#content { 
+	width: 930px; 
+	margin: 25px auto; 
 }
 
-div#h_content {
-height: 120px;
-margin: 5px;
-/*border: 1px solid #7d7d7d;*/
+div#logo { 
+	margin: 10px 0 20px 0; 
+	width: 340px; 
+	float: left; 
 }
 
-div#logo {
-height: 110px;
-width: 110px;
-float: left;
-/*margin-left: 10px;*/
-/*background: url("../images/comcon_logo.png") no-repeat;*/
-/*border: 1px solid #7d7d7d;*/
+#logo p { 
+	margin: 0; 
 }
 
-div#h_title {
-/*background: url("../images/comcon_logo.png") no-repeat;*/
-height: 110px;
-/*border: 1px solid #7d7d7d;*/
-margin-left: 113px;
+#menu { 
+	float: right; 
+	padding: 40px 0 0; 
+	margin: 0 0 38px; 
 }
 
-div#h_logo {
-text-align: center;
-height: 20px;
-margin-top: 10px;
+#menu li { 
+	font-size: 1.1em; 
+	display: inline; 
 }
 
-div#h_text {
-text-align: center;
+#menu li a { 
+	float: left; 
+	width: 87px; 
+	padding: 2px 0 7px; 
+	text-align: center; 
+	margin: 0 0 0 10px; 
+	color: #636365;  
 }
 
-div#h_nav {
-height: 20px;
-margin: 5px;
-padding-left: 5px;
-/*border: 1px solid #7d7d7d;*/
+#menu li a.current { 
+	background: #fff url(images/button.gif) no-repeat; 
+	color: #fff; 
 }
 
-/*-------------------- end header ------------------------------------*/
-/*--------------------------------------------------------------------*/
+#menu li a:hover { 
+	text-decoration: none; 
+	color: #000; 
+	background: #fff url(images/button_grey.gif) no-repeat; 
+}
 
+.clear { 
+	clear: both; 
+}
 
-/*--------------------------------------------------------------------*/
-/*-------------------- central ---------------------------------------*/
+.caption { 
+	background: #fff url(images/title.gif) no-repeat; 
+	padding: 2px 0 0 18px; 
+	height: 35px; 
+	color: #fff;  
+}
+
+.caption p { 
+	margin: 0; 
+}
+
 div#central {
-margin: 10px;
-/*border: 1px solid #7d7d7d;*/
-min-height: 400px;
-/*height: 100%;*/
+min-height: 400px;	
 }
 
-/*----- sidebar ---------*/
-div#sidebar {
-width: 180px;
-margin: 5px;
-float: left;
-padding: 5px;
-/*border: 1px solid #7d7d7d;*/
-}
-/*----- end sidebar -----*/
 
-/*----- content ---------*/
-div#content {
-/*border: 1px solid #7d7d7d;*/
-margin: 5px 5px 5px 200px;
-padding: 5px;
-
+div#sidebar { 
+	margin: 0 0 20px; 
+	clear: left; 
+	width: 200px; 
+	float: left; 
 }
 
-.content ul {
-/*-webkit-padding-start: 40px;*/
-list-style-type : disc;
-display: block;
-margin: 10px 25px;
+.box { 
+	background: 
+	#eee; 
 }
 
-.content ul#nostyle {
-list-style-type : none;
-display: block;
-margin: 10px 25px;
+
+div#sidebar img { 
+	padding: 6px; 
+	border-right: 1px solid #ccc; 
+	border-bottom: 1px solid #ccc; 
+	background: #fff;
 }
 
-.content li {
-margin: 5px;
+.smallthumb { 
+	width: 109px; 
 }
 
-.content{
-font-size: 12px;
-/*margin-top: 20px;*/
-color: #444444;/*#7d7d7d;*/
-text-decoration: none;
-}
-/*----- end content -----*/
-
-/*-------------------- end centrl ------------------------------------*/
-/*--------------------------------------------------------------------*/
-
-
-/*--------------------------------------------------------------------*/
-/*-------------------- footer ----------------------------------------*/
-div#footer {
-/*border: 1px solid #7d7d7d;*/
-margin: 10px;
-/*padding: 10px;*/
+#center { 
+	/*width: 500px;*/ 
+	/*float: left;*/ 
+	margin: 0 0 20px 215px; 
 }
 
-div#f_info {
-text-align: center;
-padding: 5px;
+/*#right { 
+	float: right; 
+	width: 200px;
+}*/
+
+.date { 
+	font-size: .8em; 
+	border-top: 1px solid #eee; 
+	padding: 5px 0 0; 
 }
 
-div#version {
-font-size: 10px;
-text-align: right;
+.box { 
+	background: #eee; 
+	padding: 10px; 
 }
 
-/*-------------------- end footer -------------------------------------*/
-/*--------------------------------------------------------------------*/
+.box li { 
+	list-style: none; 
+	border-bottom: 1px dotted #ccc; 
+	line-height: 26px; 
+}
+
+.box li a { 
+	padding: 0 5px; 
+}
+
+#footer { 
+	font-size: .84em; 
+	clear: both; 
+	padding: 5px; 
+	background: #eee; 
+}
+
+#footer a { 
+	color: #444; 
+}
+
+
+
+

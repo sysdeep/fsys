@@ -7,7 +7,7 @@
     {#<link rel="shortcut icon" href="/site_media/images/favicon.ico" />#}
     <meta name="author" content="Нефёдкин Игорь Алексеевич">
     
-    <title>ALive... | {% block title %}{% endblock %}</title>
+    <title>ALife... | {% block title %}{% endblock %}</title>
     
     {# Наш стиль #}
     <link rel="stylesheet" href="/site_media/css/style.css" media="screen" type="text/css">
@@ -31,13 +31,13 @@
 </head>
 
 <body>
-
+<div id="content">
 
 
 {#-- header -----------------------------------------------------------#}
 <div id="header">
    
-    <div id="h_content" >
+    <!--<div id="h_content" >
         <div id="logo"><a href="/" title="Главная"><img src="/site_media/images/logo.png" alt="Comcon"/></a></div>
         <div id="h_title">
             <div id="h_logo"><p>Another Life...</p></div>
@@ -52,14 +52,24 @@
             <a class="h_nav" href="/">Главная</a> |
             <a class="h_nav" href="/bookmarks/">Закладки</a> |
             <a class="h_nav" href="/about/">О проекте</a> 
+    </div>-->
+    
+    <div id="logo">
+        <p>это другая жизнь...</p>
+        <h1>Another Life...</h1>
     </div>
+    <ul id="menu">
+        <li><a {% block current_main %}{% endblock %} href="/">Главная</a></li>
+        <li><a {% block current_bookmarks %}{% endblock %} href="/bookmarks/">Закладки</a></li>
+        <li><a {% block current_about %}{% endblock %} href="/about/">О проекте</a></li>
+    </ul>
     
 </div>
 {#---------------------------------------------------------------------#}
 
 
 
-
+<div class="clear"><br /></div>
 
 
 
@@ -67,11 +77,17 @@
 <div id="central">    
   
     <div id="sidebar">
-       {% block sidebar %}{% endblock %}
-       
+        <div id="main_nav">
+            <div id="nav_title" class="caption">
+                {% block nav_title %}{% endblock %}
+            </div>
+            <div id="nav_items" class="box">
+                {% block nav_items %}{% endblock %}
+            </div>
+        </div>
     </div>
     
-    <div id="content" class="content">
+    <div id="center">
         <div id="main_content">{% block main_content %}{% endblock %}</div>
         <div id="add_content">{% block add_content %}{%endblock%}</div>
     </div>
@@ -86,10 +102,10 @@
 
 {#-- footer -----------------------------------------------------------#}
     <div id="footer">
-        <div id="f_info">
-        <p>Deep Studio</p>
-        <p>2010</p>
+        <div id="fl">
+            <p>&copy; Copyright 2010 Deep Studio<p>
         </div>
+        
         {% load extras %} {# мой обработчик шаблона - пока через фильтр #}
         <div id="version">v. {{ x|pro_version }} </div>
     </div>
@@ -97,6 +113,6 @@
 
 
 
-
+</div>
 </body>
 </html>

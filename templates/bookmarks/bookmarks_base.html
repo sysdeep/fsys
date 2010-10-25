@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}Закладки{% endblock %}
+{% block head %}Закладки{% endblock %}
+
+
+{% block current_bookmarks %} class="current" {% endblock %}
+{% block nav_title %}Закладки{% endblock %}
+
+{% block nav_items %}
+    <ul>
+        <li><a href="/null/">Раздел 1</a></li>
+        <li><a href="/null/">Раздел 2</a></li>
+    </ul>
+{% endblock %}
+
+
+{% block main_content %}
+   
+    
+    <div id="content_title">{% block сtitle %}{% endblock %}</div>
+    <div id="content_items">
+    
+        {% block content %}<!-- content -->{% endblock %}
+        
+    </div>
+ 
+{% endblock %}
+
+
+
+
+

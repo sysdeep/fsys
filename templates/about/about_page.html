@@ -1,30 +1,16 @@
 {# about_page #}
-{% extends "base.html" %}
-{% block title %}О проекте{% endblock %}
-{% block head %}О проекте{% endblock %}
+{% extends "about/about_base.html" %}
 
 
+{% block сtitle %} <h2>О проекте</h2> {% endblock %}
 
-
-{% block sidebar %}
-<div id="main_nav">
-    <!-- навигация -->
-    <!--<div id="nav_title"><p class="c_title">Главная</p></div>-->
-        
-    <div id="nav_items">
-        {% include "about/menu_list.html" %}
-    </div>
-</div>
-{% endblock %}
-
-{% block main_content %}
+{% block content %}
    
     
     <!--<div id="content_title"><p class="c_title">Главная</p></div>-->
     
     <div id="content_items">
     
-        <h1 align="center">Сайт на Django</h1>
         
         <p>На данном сайте будет нахорится различная информация(какая - пока неизвестно)))))</p>
         
