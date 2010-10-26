@@ -28,6 +28,8 @@ urlpatterns = patterns('',
     
     (r'^bookmarks/', include('bookmarks.urls')),                        #закладки
     
+    (r'^login/$', 'django.contrib.auth.views.login'),                   #login
+    
     #(r'^business_trips/', include('report.business_trips.urls')),       #журнал поездок
     
     (r'^site_media/(?P<path>.*)$', 'django.views.static.serve',{'document_root': site_media}),

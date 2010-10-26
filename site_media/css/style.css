@@ -44,6 +44,20 @@ h2 {
 img { 
 	border: 0; 
 }
+
+
+
+
+.content ul {
+/*-webkit-padding-start: 40px;*/
+list-style-type : disc;
+display: block;
+margin: 10px 25px;
+}
+
+.content li {
+margin: 5px;
+}
 	
 div#content { 
 	width: 930px; 
@@ -135,7 +149,7 @@ div#sidebar img {
 	width: 109px; 
 }
 
-#center { 
+div#center { 
 	/*width: 500px;*/ 
 	/*float: left;*/ 
 	margin: 0 0 20px 215px; 
@@ -167,17 +181,24 @@ div#sidebar img {
 	padding: 0 5px; 
 }
 
-#footer { 
+
+/*====================================================================*/
+
+div#footer { 
 	font-size: .84em; 
 	clear: both; 
 	padding: 5px; 
 	background: #eee; 
 }
 
-#footer a { 
-	color: #444; 
+div#version {
+text-align: right;
 }
 
+/*#footer a { 
+	color: #444; 
+}*/
+/*====================================================================*/
 
 
 

@@ -25,6 +25,9 @@ urlpatterns = patterns('',
     
     (r'^$', main_page),                                                 #main
     (r'^user/(\w+)/$', user_page),                                      #user_page
+    
+    
+
 
     #(r'^about/', direct_to_template, {'template': 'about/about_page.html'}),  #about
     #(r'^about_news/', direct_to_template, {'template': 'about/about_news_page.html'}),  #Новости о разработке

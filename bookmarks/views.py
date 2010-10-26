@@ -14,7 +14,7 @@ from bookmarks.models import Link
 
 #-----------------------------------------------------------------------
 def main_page(request):
-    
+    """Главная страница"""
     
     users = User.objects.all()
     
@@ -34,13 +34,15 @@ def main_page(request):
 
 #-----------------------------------------------------------------------
 def user_page(request, username):
+    """Страница выбранного пользователя"""
     
-    try:
-        user = User.objects.get(username=username)
-    except User.DoesNotExist:
+    
+    try:        #пробуем
+        user = User.objects.get(username=username)      #если есть - получаем
+    except User.DoesNotExist:                           #нет такого пользователя - ошибка
         raise Http404(u"User "+username+" not found")
         
-    bookmarks = user.bookmark_set.all()
+    bookmarks = user.bookmark_set.all()     #все закладки
     
     variables = ({
         'username': user,
