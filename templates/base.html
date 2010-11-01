@@ -37,6 +37,15 @@
 {#-- header -----------------------------------------------------------#}
 <div id="header">
    
+    <div id="user_menu" style="float: right;">
+        {% if user.is_authenticated %}
+            {{ user.username }} (<a href="/logout">выход</a>)
+        {% else %}
+            <a href="/login/">вход</a> |
+            <a href="/register/">регистрация</a>
+        {% endif %}
+    </div>
+   
     <!--<div id="h_content" >
         <div id="logo"><a href="/" title="Главная"><img src="/site_media/images/logo.png" alt="Comcon"/></a></div>
         <div id="h_title">

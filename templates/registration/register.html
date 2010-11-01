@@ -1,0 +1,40 @@
+{# register_page #}
+{% extends "base.html" %}
+{% block title %}регистрация{% endblock %}
+{% block head %}Register{% endblock %}
+
+
+
+{% block nav_title %}Меню{% endblock %}
+
+
+{% block nav_items %}
+    <ul>
+        <li><a href="/login/">Вход</a></li>
+    </ul>
+{% endblock %}
+
+
+
+{% block main_content %}
+   
+    
+    <div id="content_title"><h2>Регистрация пользователя</h2></div>
+    
+    <div id="content_item">
+    
+        
+        <form method="post" action=".">{% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="register" />
+        </form>
+
+    </div> 
+    
+    
+    
+    
+{% endblock %}
+
+
+

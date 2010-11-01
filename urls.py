@@ -3,6 +3,7 @@ from django.conf.urls.defaults import *
 from django.views.generic.simple import direct_to_template
 import os.path
 from settings import site_media#, site_upload, backup_dir
+from views import logout_page, register_page
 
 # Uncomment the next two lines to enable the admin:
 # from django.contrib import admin
@@ -28,7 +29,11 @@ urlpatterns = patterns('',
     
     (r'^bookmarks/', include('bookmarks.urls')),                        #закладки
     
+    
     (r'^login/$', 'django.contrib.auth.views.login'),                   #login
+    (r'^logout/', logout_page),                                         #logout
+    (r'^register/', register_page),                                     #регистрация
+    (r'^register_success/', direct_to_template, {'template': 'registration/register_success.html'}),    #
     
     #(r'^business_trips/', include('report.business_trips.urls')),       #журнал поездок
     

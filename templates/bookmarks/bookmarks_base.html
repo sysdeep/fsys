@@ -8,8 +8,15 @@
 
 {% block nav_items %}
     <ul>
-        <li><a href="/null/">Раздел 1</a></li>
+        {% if user.is_authenticated %}
+           <li><a href="/bookmarks/user/{{ user.username }}">Мои закладки</a></li> 
+           <li><a href="/bookmarks/save/">Добавить закладку</a></li> 
+        {% else %}
+            
+        
+        <li><a href="/null/">---</a></li>
         <li><a href="/null/">Раздел 2</a></li>
+        {% endif %}
     </ul>
 {% endblock %}
 

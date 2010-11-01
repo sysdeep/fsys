@@ -119,3 +119,7 @@ INSTALLED_APPS = (
     'tags',                                                      #дополнительные тэги
 
 )
+
+
+LOGIN_URL = '/login/'
+
