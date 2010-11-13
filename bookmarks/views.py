@@ -5,7 +5,7 @@
 from django.http import HttpResponse, Http404, HttpResponseRedirect
 from django.contrib.auth.models import User
 from django.template import RequestContext
-from django.shortcuts import render_to_response  #, get_object_or_404
+from django.shortcuts import render_to_response, get_object_or_404
 from django.contrib.auth.decorators import login_required
 
 
@@ -39,12 +39,14 @@ def user_page(request, username):
     """Страница выбранного пользователя"""
     
     
-    try:        #пробуем
-        user = User.objects.get(username=username)      #если есть - получаем
-    except User.DoesNotExist:                           #нет такого пользователя - ошибка
-        raise Http404(u"User "+username+" not found")
+    #try:        #пробуем
+    #    user = User.objects.get(username=username)      #если есть - получаем
+    #except User.DoesNotExist:                           #нет такого пользователя - ошибка
+    #    raise Http404(u"User "+username+" not found")
+     
+    user = get_object_or_404(User, username=username) 
         
-    bookmarks = user.bookmark_set.all()     #все закладки
+    bookmarks = user.bookmark_set.order_by("-id")     #все закладки
     
     variables = RequestContext(request,{
         'username': user,
@@ -104,7 +106,18 @@ def bookmark_save_page(request):
 
 
 
-
+#-----------------------------------------------------------------------
+def tag_page(request, tag_name):
+    """Страница закладок с заданным тэгом"""
+    
+    tag = get_object_or_404(Tag, name=tag_name)
+    bookmarks = tag.bookmarks.order_by('-id')
+    variables = RequestContext(request,{
+        'bookmarks': bookmarks,
+        'tag_name': tag_name,
+    })
+    return render_to_response(u'bookmarks/tag_page.html', variables)
+#-----------------------------------------------------------------------
 
 
 

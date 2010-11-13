@@ -200,5 +200,9 @@ text-align: right;
 }*/
 /*====================================================================*/
 
-
+ul.tags, ul.tags li {
+display: inline;
+margin: 0;
+padding: 0;
+}
 

@@ -4,7 +4,7 @@ from django.conf.urls.defaults import *
 #import os.path
 #from settings import site_media#, site_upload, backup_dir
 
-from bookmarks.views import main_page, user_page, bookmark_save_page
+from bookmarks.views import main_page, user_page, bookmark_save_page, tag_page
 
 # Uncomment the next two lines to enable the admin:
 # from django.contrib import admin
@@ -26,6 +26,8 @@ urlpatterns = patterns('',
     (r'^$', main_page),                                                 #main
     (r'^user/(\w+)/$', user_page),                                      #user_page
     (r'^save/$', bookmark_save_page),                                   #bookmark_save_page
+    (r'^tag/([^\s]+)/$', tag_page),                                     #тэги
+
     
     
 

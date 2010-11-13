@@ -1,17 +1,10 @@
-{# main_page #}
+{# tag_page #}
 {% extends "bookmarks/bookmarks_base.html" %}
 
 
-{% block сtitle %} <h2>Закладки для пользователя {{ username }}</h2> {% endblock %}
+{% block сtitle %} <h2>Закладки c тэгом {{ tag_name }}</h2> {% endblock %}
 
 {% block content %}
-    
-    
-    <div id="add_opt">
-        <!--<a class="line_links" href="#" title="Добавить новую запись о поездке">Добавить запись о поездке для </a>
-        |
-        <a class="line_links" href="#" title="Перейти на страницу настройки пользователя">Изменить запись о пользователе</a>-->
-    </div>
     
     {% if bookmarks %}
         <ul>
