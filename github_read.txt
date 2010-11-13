@@ -1,0 +1,25 @@
+Глобальные настройки:
+ Загрузить и установить Git
+  git config --global user.name "Your Name"
+  git config --global user.email sysdeep@yandex.ru
+        
+Следующие шаги:
+  mkdir fsys
+  cd fsys
+  git init
+  touch README
+  git add README
+  git commit -m 'first commit'
+  git remote add origin git@github.com:sysdeep/fsys.git
+  git push origin master
+      
+Уже есть Git репозиторий?
+  cd existing_git_repo
+  git remote add origin git@github.com:sysdeep/fsys.git
+  git push origin master
+      
+Импортировать репозиторий Subversion?
+  Нажмите здесь
+      
+Когда все готово:
+  Продолжить
