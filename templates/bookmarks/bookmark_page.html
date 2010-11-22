@@ -1,8 +1,8 @@
-{# main_page #}
+{# bookmark_page #}
 {% extends "bookmarks/bookmarks_base.html" %}
 
 
-{% block сtitle %} <h2>Закладки для пользователя <span class="color_title">{{ username }}</span></h2> {% endblock %}
+{% block сtitle %} <h2>{{ shared_bookmark.bookmark.title }}</h2> {% endblock %}
 
 {% block content %}
     
@@ -13,31 +13,11 @@
         <a class="line_links" href="#" title="Перейти на страницу настройки пользователя">Изменить запись о пользователе</a>-->
     </div>
     
-    {% if bookmarks %}
-        <ul>
-        {% for bookmark in bookmarks %}
-            <li>
-                <a href="{{ bookmark.link.url }}">{{ bookmark.title }}</a>
-                <a href="/bookmarks/save/?url={{ bookmark.link.url|urlencode }}">[edit]</a>
+    <a href="/vote/?id={{ shared_bookmark.id }}" class="vote">[+]</a>
+    <a href="{{ shared_bookmark.bookmark.link.url }}" class="title">{{ shared_bookmark.bookmark.title }}</a>
+    Posted By:
+    <a href="/user/{{ shared_bookmark.bookmark.user.username }}/" class="username">{{ shared_bookmark.bookmark.user.username }}</a> | <span class="vote-count">Votes: {{ shared_bookmark.votes }}</span>
 
-            </li>
-                Tags:
-                {% if bookmark.tag_set.all %}
-                <ul class="tags">
-                    {% for tag in bookmark.tag_set.all %}
-                    <li><a href="/bookmarks/tag/{{ tag.name }}/">{{ tag.name }}</a></li>
-                    {% endfor %}
-                </ul>
-                {% else %}
-                    None.
-                {% endif %}
-        {% endfor %}
-        </ul>
-    
-    {% else %}
-        <p>No bookmark found</p>
-    {% endif %}
-         
     
     
 {% endblock %}

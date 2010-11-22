@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block title %}Закладки{% endblock %}
 {% block head %}Закладки{% endblock %}
-
+{% block external %}{#<script type="text/javascript" src="/site_media/js/search.js"></script>#}{% endblock %}
 
 {% block current_bookmarks %} class="current" {% endblock %}
 {% block nav_title %}Закладки{% endblock %}
@@ -15,8 +15,13 @@
             
         
         <li><a href="/null/">---</a></li>
-        <li><a href="/null/">Раздел 2</a></li>
+        <li><a href="/null/">---</a></li>
         {% endif %}
+        
+        {#<li><a href="/null/">----------</a></li>#}
+        <li><a href="/bookmarks/search/">Поиск</a></li>
+        <li><a href="/bookmarks/tag/">Облако</a></li>
+        <li><a href="/bookmarks/popular/">Популярные</a></li>
     </ul>
 {% endblock %}
 

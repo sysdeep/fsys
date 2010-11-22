@@ -1,0 +1,29 @@
+{# tag_cloud_page #}
+{% extends "bookmarks/bookmarks_base.html" %}
+
+
+{% block сtitle %} <h2>Облако тэгов</h2> {% endblock %}
+
+{% block content %}
+    
+    <div id="tag_cloud">
+        {% for tag in tags %}
+            <a href="/bookmarks/tag/{{ tag.name }}/" class="tag-cloud-{{ tag.weight }}">{{ tag.name }}</a>
+        {% endfor %}
+    </div>     
+    
+    
+{% endblock %}
+
+
+{% block add_content %}
+
+    <!--<h2>Примечания:</h2>
+    <ul style="width: 100%">  
+        <li>На этой странице представлен список поездок, которые совершал заданный пользователь.</li>
+        <li>При щелчке на имени завода произойдет выборка поездок по этому заводу.</li>
+        <li>Для изменений данных об объекте необходимо щелкнуть по надписи "Изменить запись".</li>
+        <li>При щелчке на надписи "Удалить запись" - произойдет удаление записи из базы данных.</li>
+    </ul>-->
+    
+{% endblock %}

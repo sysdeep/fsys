@@ -35,7 +35,8 @@ urlpatterns = patterns('',
     (r'^register/', register_page),                                     #регистрация
     (r'^register_success/', direct_to_template, {'template': 'registration/register_success.html'}),    #
     
-    #(r'^business_trips/', include('report.business_trips.urls')),       #журнал поездок
+    (r'^comments/', include('django.contrib.comments.urls')),           #комментарии
+
     
     (r'^site_media/(?P<path>.*)$', 'django.views.static.serve',{'document_root': site_media}),
     #(r'^site_upload/(?P<path>.*)$', 'django.views.static.serve',{'document_root': site_upload}),

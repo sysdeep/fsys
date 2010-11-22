@@ -16,4 +16,15 @@ class BookmarkSaveForm(forms.Form):
     title = forms.CharField(label=u"Title", widget=forms.TextInput(attrs={'size':64}))
     
     tags = forms.CharField(label=u"Tags", widget=forms.TextInput(attrs={'size':64}), required=False)
+    
+    share = forms.BooleanField(label=u'Share on the main page', required=False)
+#-----------------------------------------------------------------------
+
+
+
+#-----------------------------------------------------------------------
+class SearchForm(forms.Form):
+    """Поиск"""
+    
+    query = forms.CharField(label=u'Enter a keyword to search for', widget=forms.TextInput(attrs={'size': 32}))
 #-----------------------------------------------------------------------
