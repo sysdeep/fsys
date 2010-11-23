@@ -45,7 +45,7 @@ class SharedBookmark(models.Model):
     bookmark = models.ForeignKey(Bookmark, unique=True)
     date = models.DateTimeField(auto_now_add=True)
     votes = models.IntegerField(default=1)
-    users_votes = models.ManyToManyField(User)
+    users_voted = models.ManyToManyField(User)
     
     def __unicode__(self):
         return u'%s, %s' % (self.bookmark, self.votes)
