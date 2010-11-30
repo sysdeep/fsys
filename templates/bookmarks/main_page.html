@@ -1,4 +1,4 @@
-{# main_page #}
+{# bookmarks main_page #}
 {% extends "bookmarks/bookmarks_base.html" %}
 
 
@@ -7,24 +7,15 @@
 {% block content %}
     
     
-    <div id="add_opt">
-        <!--<a class="line_links" href="#" title="Добавить новую запись о поездке">Добавить запись о поездке для </a>
-        |
-        <a class="line_links" href="#" title="Перейти на страницу настройки пользователя">Изменить запись о пользователе</a>-->
-    </div>
-    
-    
-    
     {% if user.username %}
-        <p>Welcome {{ user.username }}!
-        Here you can store and share bookmarks!</p>
+        <p>Добро пожаловать {{ user.username }} на страничку закладок.</p>
     {% else %}
-        <p>Welcome anonymous user!
-        You need to <a href="/login/">login</a>
-        before you can store and share bookmarks.</p>
+        <p>Добро пожаловать на страничку закладок. Здесь Вы можете видеть закладки пользователей. О том как стать пользователем читаем <a href="/login_help/">тут</a>.</p>
+        
+        {# Welcome anonymous user!You need to <a href="/login/">login</a>before you can store and share bookmarks.</p> #}
     {% endif %}
     
-    <h2>Bookmarks Shared by Users</h2>
+    <h2>Последние закладки</h2>
         {#% include "shared_bookmark_list.html" %#}
 
     
@@ -34,9 +25,10 @@
                 {% for shared_bookmark in shared_bookmarks %}
                 <li>
                     <a href="/bookmarks/vote/?id={{ shared_bookmark.id }}" class="vote">[+]</a>
-                    <a href="{{ shared_bookmark.bookmark.link.url }}" class="title"> {{ shared_bookmark.bookmark.title }}</a><br/>
+                    <a href="{{ shared_bookmark.bookmark.link.url }}" class="title"> {{ shared_bookmark.bookmark.title }}</a>
+                    <br/>
                     Posted By:
-                    <a href="/bookmarks/user/{{ shared_bookmark.bookmark.user.username }}/" class="username">{{ shared_bookmark.bookmark.user.username }}</a> | <span class="vote-count">Votes:{{ shared_bookmark.votes }}</span>
+                    <a href="/bookmarks/user/{{ shared_bookmark.bookmark.user.username }}/" class="username">{{ shared_bookmark.bookmark.user.username }}</a> | <span class="vote-count">Votes:{{ shared_bookmark.votes }}</span> | <a href="/bookmarks/bookmark/{{ shared_bookmark.id }}">Comments</a>
                 </li>
                 {% endfor %}
             </ul>

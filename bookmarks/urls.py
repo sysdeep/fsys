@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from django.conf.urls.defaults import *
-#from django.views.generic.simple import direct_to_template
+from django.views.generic.simple import direct_to_template
 #import os.path
 #from settings import site_media#, site_upload, backup_dir
 
@@ -35,6 +35,8 @@ urlpatterns = patterns('',
     (r'^bookmark/(\d+)/$', bookmark_page),
 
 
+
+   
     
     
 

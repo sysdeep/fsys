@@ -35,6 +35,12 @@ urlpatterns = patterns('',
     (r'^register/', register_page),                                     #регистрация
     (r'^register_success/', direct_to_template, {'template': 'registration/register_success.html'}),    #
     
+    
+     (r'^login_help/', direct_to_template, {'template': 'login_help.html'}),  #помощь при регистрации
+    
+    
+    
+    
     (r'^comments/', include('django.contrib.comments.urls')),           #комментарии
 
     
