@@ -6,22 +6,22 @@
 {% block сtitle %} <h2>{{ shared_bookmark.bookmark.title }}</h2> {% endblock %}
 
 {% block content %}
-    
-    
-    <div id="add_opt">
-        <!--<a class="line_links" href="#" title="Добавить новую запись о поездке">Добавить запись о поездке для </a>
-        |
-        <a class="line_links" href="#" title="Перейти на страницу настройки пользователя">Изменить запись о пользователе</a>-->
-    </div>
-    
-    <a href="/vote/?id={{ shared_bookmark.id }}" class="vote">[+]</a>
-    <a href="{{ shared_bookmark.bookmark.link.url }}" class="title">{{ shared_bookmark.bookmark.title }}</a>
-    Posted By:
-    <a href="/user/{{ shared_bookmark.bookmark.user.username }}/" class="username">{{ shared_bookmark.bookmark.user.username }}</a> | <span class="vote-count">Votes: {{ shared_bookmark.votes }}</span>
 
-    <h2>Comments</h2>
     
+   
+    <a href="{{ shared_bookmark.bookmark.link.url }}" class="title"><b>{{ shared_bookmark.bookmark.title }}</b></a>
+    Размещена:
+    <a href="/user/{{ shared_bookmark.bookmark.user.username }}/" class="username">{{ shared_bookmark.bookmark.user.username }}</a> | <span class="vote-count">Голосов: {{ shared_bookmark.votes }}</span>
+     [<a href="/bookmarks/vote/?id={{ shared_bookmark.id }}" class="vote">+</a>]
+
+
+    <br/>
+    <br/>
+    <br/>
+
     {% get_comment_count for bookmarks.sharedbookmark shared_bookmark.id as comment_count %}
+    <h2>Коментарии ({{ comment_count }})</h2>
+    
     {% get_comment_list for bookmarks.sharedbookmark shared_bookmark.id as comment_list %}
     {% for comment in comment_list %}
         <div class="comment">
@@ -29,7 +29,7 @@
             {{ comment.comment|escape|urlizetrunc:40|linebreaks }}
         </div>
     {% endfor %}
-    <p>Number of comments: {{ comment_count }}</p>
+    
     {% render_comment_form for bookmarks.sharedbookmark shared_bookmark.id %}
 
     
@@ -39,15 +39,3 @@
     
 {% endblock %}
 
-
-{% block add_content %}
-
-    <!--<h2>Примечания:</h2>
-    <ul style="width: 100%">  
-        <li>На этой странице представлен список поездок, которые совершал заданный пользователь.</li>
-        <li>При щелчке на имени завода произойдет выборка поездок по этому заводу.</li>
-        <li>Для изменений данных об объекте необходимо щелкнуть по надписи "Изменить запись".</li>
-        <li>При щелчке на надписи "Удалить запись" - произойдет удаление записи из базы данных.</li>
-    </ul>-->
-    
-{% endblock %}

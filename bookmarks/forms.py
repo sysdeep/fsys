@@ -26,5 +26,5 @@ class BookmarkSaveForm(forms.Form):
 class SearchForm(forms.Form):
     """Поиск"""
     
-    query = forms.CharField(label=u'Enter a keyword to search for', widget=forms.TextInput(attrs={'size': 32}))
+    query = forms.CharField(label=u'Введите ключевое слово', widget=forms.TextInput(attrs={'size': 32, 'class': "form_input",}))
 #-----------------------------------------------------------------------

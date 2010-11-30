@@ -1,4 +1,4 @@
-{# tag_page #}
+{# bookmarks tag_page #}
 {% extends "bookmarks/bookmarks_base.html" %}
 
 
@@ -9,12 +9,18 @@
     {% if bookmarks %}
         <ul>
         {% for bookmark in bookmarks %}
-            <li><a href="{{ bookmark.link.url }}">{{ bookmark.title }}</a></li>
-                Tags:
+            <li><a href="{{ bookmark.link.url }}"><b>{{ bookmark.title }}</b></a></li>
+                Тэги:
                 {% if bookmark.tag_set.all %}
                 <ul class="tags">
                     {% for tag in bookmark.tag_set.all %}
-                    <li><a href="/bookmarks/tag/{{ tag.name }}/">{{ tag.name }}</a></li>
+                        <li><a href="/bookmarks/tag/{{ tag.name }}/">
+                            {% if tag.name == tag_name %}
+                                {# пусто #}
+                            {% else %}
+                                {{ tag.name }}
+                            {% endif %}
+                        </a></li>
                     {% endfor %}
                 </ul>
                 {% else %}
@@ -24,7 +30,7 @@
         </ul>
     
     {% else %}
-        <p>No bookmark found</p>
+        <p>Закладок с тэгом {{ tag_name }} - не найдено, а поэтому есть какая-то ошибка. Пожалуйста свяжитесь с администратором сервиса.</p>
     {% endif %}
          
     

@@ -11,57 +11,39 @@
         <p>Добро пожаловать {{ user.username }} на страничку закладок.</p>
     {% else %}
         <p>Добро пожаловать на страничку закладок. Здесь Вы можете видеть закладки пользователей. О том как стать пользователем читаем <a href="/login_help/">тут</a>.</p>
-        
-        {# Welcome anonymous user!You need to <a href="/login/">login</a>before you can store and share bookmarks.</p> #}
     {% endif %}
+    
+    
+    
     
     <h2>Последние закладки</h2>
         {#% include "shared_bookmark_list.html" %#}
 
     
     
-        {% if shared_bookmarks %}
+        {% if shared_bookmarks %}{# если есть закладки #}
             <ul class="bookmarks">
                 {% for shared_bookmark in shared_bookmarks %}
                 <li>
-                    <a href="/bookmarks/vote/?id={{ shared_bookmark.id }}" class="vote">[+]</a>
-                    <a href="{{ shared_bookmark.bookmark.link.url }}" class="title"> {{ shared_bookmark.bookmark.title }}</a>
+                    
+                    <a href="{{ shared_bookmark.bookmark.link.url }}" class="title"><b>{{ shared_bookmark.bookmark.title }}</b></a>
                     <br/>
-                    Posted By:
-                    <a href="/bookmarks/user/{{ shared_bookmark.bookmark.user.username }}/" class="username">{{ shared_bookmark.bookmark.user.username }}</a> | <span class="vote-count">Votes:{{ shared_bookmark.votes }}</span> | <a href="/bookmarks/bookmark/{{ shared_bookmark.id }}">Comments</a>
+                    Размещена:
+                    {#<a href="/bookmarks/user/{{ shared_bookmark.bookmark.user.username }}/" class="username">#}{{ shared_bookmark.bookmark.user.username }}</a>
+                    | <span class="vote-count">Голосов:{{ shared_bookmark.votes }}</span>
+                    [<a href="/bookmarks/vote/?id={{ shared_bookmark.id }}" class="vote">+</a>] | 
+                    <a href="/bookmarks/bookmark/{{ shared_bookmark.id }}">Коментарии</a>
                 </li>
                 {% endfor %}
             </ul>
-        {% else %}
-            <p>No bookmarks found.</p>
-    {% endif %}
+        {% else %}{# если нет #}
+            <p>Закладок нет.</p>
+        {% endif %}
 
     
     
-    <!--     <br>
-    {% for user in users %}
-        <p><a href="/bookmarks/user/{{ user }}">{{ user }}</a></p>
-    {% endfor %}
-    <br>
-    <br>
-    <h2>Sites</h2>
-    {% for site in sites %}
-        <p>{{ site }}</p>
-    {% endfor %}
-    <br>-->
     
     
 {% endblock %}
 
 
-{% block add_content %}
-
-    <!--<h2>Примечания:</h2>
-    <ul style="width: 100%">  
-        <li>На этой странице представлен список поездок, которые совершал заданный пользователь.</li>
-        <li>При щелчке на имени завода произойдет выборка поездок по этому заводу.</li>
-        <li>Для изменений данных об объекте необходимо щелкнуть по надписи "Изменить запись".</li>
-        <li>При щелчке на надписи "Удалить запись" - произойдет удаление записи из базы данных.</li>
-    </ul>-->
-    
-{% endblock %}

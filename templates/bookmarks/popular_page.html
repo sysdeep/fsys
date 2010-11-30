@@ -1,17 +1,12 @@
-{# main_page #}
+{# bookmarks_popular_page #}
 {% extends "bookmarks/bookmarks_base.html" %}
 
 
-{% block сtitle %} <h2>Закладки - главная</h2> {% endblock %}
+{% block сtitle %} <h2>Популярные закладки на сегодня</h2> {% endblock %}
 
 {% block content %}
     
-    
-    <div id="add_opt">
-        <!--<a class="line_links" href="#" title="Добавить новую запись о поездке">Добавить запись о поездке для </a>
-        |
-        <a class="line_links" href="#" title="Перейти на страницу настройки пользователя">Изменить запись о пользователе</a>-->
-    </div>
+
     
     
     
@@ -44,32 +39,8 @@
             <p>No bookmarks found.</p>
     {% endif %}
 
-    
-    
-    <!--     <br>
-    {% for user in users %}
-        <p><a href="/bookmarks/user/{{ user }}">{{ user }}</a></p>
-    {% endfor %}
-    <br>
-    <br>
-    <h2>Sites</h2>
-    {% for site in sites %}
-        <p>{{ site }}</p>
-    {% endfor %}
-    <br>-->
+  
     
     
 {% endblock %}
 
-
-{% block add_content %}
-
-    <!--<h2>Примечания:</h2>
-    <ul style="width: 100%">  
-        <li>На этой странице представлен список поездок, которые совершал заданный пользователь.</li>
-        <li>При щелчке на имени завода произойдет выборка поездок по этому заводу.</li>
-        <li>Для изменений данных об объекте необходимо щелкнуть по надписи "Изменить запись".</li>
-        <li>При щелчке на надписи "Удалить запись" - произойдет удаление записи из базы данных.</li>
-    </ul>-->
-    
-{% endblock %}

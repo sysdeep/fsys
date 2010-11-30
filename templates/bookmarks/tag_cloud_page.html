@@ -5,7 +5,7 @@
 {% block сtitle %} <h2>Облако тэгов</h2> {% endblock %}
 
 {% block content %}
-    
+    <br/>
     <div id="tag_cloud">
         {% for tag in tags %}
             <a href="/bookmarks/tag/{{ tag.name }}/" class="tag-cloud-{{ tag.weight }}">{{ tag.name }}</a>
