@@ -13,11 +13,11 @@ class BookmarkSaveForm(forms.Form):
     
     url = forms.URLField(label=u"URL", widget=forms.TextInput(attrs={'size':64}))
     
-    title = forms.CharField(label=u"Title", widget=forms.TextInput(attrs={'size':64}))
+    title = forms.CharField(label=u"Название", widget=forms.TextInput(attrs={'size':64}))
     
-    tags = forms.CharField(label=u"Tags", widget=forms.TextInput(attrs={'size':64}), required=False)
+    tags = forms.CharField(label=u"Тэги", widget=forms.TextInput(attrs={'size':64}), required=False)
     
-    share = forms.BooleanField(label=u'Share on the main page', required=False)
+    share = forms.BooleanField(label=u'Показывать на главной', required=False)
 #-----------------------------------------------------------------------
 
 

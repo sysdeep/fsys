@@ -260,6 +260,21 @@ def popular_page(request):
 
 
 
+#-----------------------------------------------------------------------
+@login_required
+def bookmark_safe_delete_page(request):
+    """Страничка с предупреждением об удалении записи"""
+    link = Link.objects.get(url = request.GET['url'])
+    print link
+    bookmark = Bookmark.objects.get(user = request.user, link = link)
+    print bookmark.title
+    variables = RequestContext(request, {
+        'bookmark': bookmark,
+        'link': link
+    })
+    
+    return render_to_response('bookmarks/safe_delete.html', variables)
+#-----------------------------------------------------------------------
 
 
 

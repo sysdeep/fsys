@@ -16,7 +16,7 @@
                     {% for tag in bookmark.tag_set.all %}
                         <li><a href="/bookmarks/tag/{{ tag.name }}/">
                             {% if tag.name == tag_name %}
-                                {# пусто #}
+                                {# для выделения - пока ничего нет #}{{ tag.name }}
                             {% else %}
                                 {{ tag.name }}
                             {% endif %}

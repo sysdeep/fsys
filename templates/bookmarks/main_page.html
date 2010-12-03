@@ -8,7 +8,7 @@
     
     
     {% if user.username %}
-        <p>Добро пожаловать {{ user.username }} на страничку закладок.</p>
+        <p>Добро пожаловать <span class="color_title">{{ user.username }}</span> на страничку закладок.</p>
     {% else %}
         <p>Добро пожаловать на страничку закладок. Здесь Вы можете видеть закладки пользователей. О том как стать пользователем читаем <a href="/login_help/">тут</a>.</p>
     {% endif %}
@@ -31,8 +31,12 @@
                     Размещена:
                     {#<a href="/bookmarks/user/{{ shared_bookmark.bookmark.user.username }}/" class="username">#}{{ shared_bookmark.bookmark.user.username }}</a>
                     | <span class="vote-count">Голосов:{{ shared_bookmark.votes }}</span>
-                    [<a href="/bookmarks/vote/?id={{ shared_bookmark.id }}" class="vote">+</a>] | 
-                    <a href="/bookmarks/bookmark/{{ shared_bookmark.id }}">Коментарии</a>
+                    [<a href="/bookmarks/vote/?id={{ shared_bookmark.id }}" class="vote">+</a>] 
+                    
+                    {# пока отключим комментарии #}
+                    {#| <a href="/bookmarks/bookmark/{{ shared_bookmark.id }}">Коментарии</a>#}
+                    
+                    
                 </li>
                 {% endfor %}
             </ul>

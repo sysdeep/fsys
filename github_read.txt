@@ -35,3 +35,10 @@ cd fsys
 git remote add origin git@github.com:sysdeep/fsys.git
 git checkout -b devel origin/devel
 git checkout -b latest origin/latest
+
+
+
+
+
+git push git@github.com:sysdeep/fsys.git devel
+
