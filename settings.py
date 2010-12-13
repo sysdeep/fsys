@@ -12,7 +12,7 @@ ADMINS = (
 
 MANAGERS = ADMINS
 
-VERSION = "0.01"
+VERSION = "0.02"
 
 
 path_f = os.path.abspath(__file__)                      #получаем полный path к тек. файлу
@@ -110,12 +110,12 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.sites',
     'django.contrib.messages',
-    'django.contrib.comments',
+    #'django.contrib.comments',
     # Uncomment the next line to enable the admin:
     # 'django.contrib.admin',
     
     
-    'bookmarks',                    #закладки
+    #'bookmarks',                    #закладки
     
     'tags',                                                      #дополнительные тэги
 

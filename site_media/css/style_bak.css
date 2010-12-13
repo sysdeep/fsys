@@ -83,20 +83,13 @@ div#sidebar {
 	float: left; 
 }
 
-div#nav_title{
-    background: url(images/title.png) no-repeat; 
-    padding: 2px 0 0 18px;
-    margin-top: -25px;
-    height: 35px; 
-    color: #fff;
-}
-/*div.caption { 
+div.caption { 
 	background: #fff url(images/title.gif) no-repeat; 
 	padding: 2px 0 0 18px; 
 	height: 35px; 
 	color: #fff;  
     
-}*/
+}
 
 
 /*div#sidebar img { 
@@ -113,15 +106,15 @@ div#main_nav{
 .box { 
 	background: #eee; 
 	padding: 10px; 
-    border: 1px solid #D0C9C3;
-    /*border-right: 1px solid #D0C9C3;
-    border-left: 1px solid #D0C9C3;*/
+    border-bottom: 1px solid #D0C9C3;
+    border-right: 1px solid #D0C9C3;
+    border-left: 1px solid #D0C9C3;
 }
 
 .box li { 
 	list-style: none; 
 	/*border-bottom: 1px dotted #ccc; */
-	line-height: 20px; 
+	line-height: 26px; 
 }
 
 .box li a { 
@@ -214,12 +207,3 @@ float: right;
 
 /*=== end central ====================================================*/
 
-
-
-
-/*=== other ==========================================================*/
-div#right_bottom{
-    float: right;
-    vertical-align: bottom;
-}
-/*=== end other ======================================================*/

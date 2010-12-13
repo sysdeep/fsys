@@ -4,11 +4,12 @@
 
 
 {% block current_main %} class="current" {% endblock %}
+
 {% block nav_title %}Главная{% endblock %}
 
 {% block nav_items %}
     <ul>
-        <li><a href="/bookmarks/">Закладки</a></li>
+        {#<li><a href="/bookmarks/">Закладки</a></li>#}
         <li><a href="/about/">О проекте</a></li>
     </ul>
 {% endblock %}
@@ -16,15 +17,18 @@
 {% block main_content %}
    
     
-    <div id="content_title"><h2>Сайт на Django - главная</h2></div>
+    <div id="content_title"><h2>Добро пожаловать на проект Another Life...</h2></div>
     
     <div id="content_item">
     
         
-        <p>На данном сайте будет нахорится различная информация(какая - пока неизвестно)))))</p>
+        <p>Добро пожаловать на Another Life... Этот проект зарождался как своеобразная площадка для тестирования возможностей фреймворка <a href="http://djangoproject.com/">Django</a>, но в дальнейшем, я надеюсь, это будет полноценный рабочий проект. Какая информация будет тут находиться - пока не решено... Вполне возможно это будет очередной блог, или сборник статей... По всем вопросам обращаться на мыло - <a href="mailto:sysdeep@yandex.ru">sysdeep@yandex.ru</a></p>
         
-        <p>Хостинг предоставлен сайтом <a href="http://www.alwaysdata.com/" >http://www.alwaysdata.com/</a></p>
         
+        
+        <div id="right_bottom">
+            <p>Хостинг предоставлен <a href="http://www.alwaysdata.com/" >alwaysdata.com</a></p>
+        </div>
         
     </div>
  
