@@ -28,17 +28,34 @@
 
 
 
+
+Заливка:
+	git push git@github.com:sysdeep/fsys.git devel
+
+
+
 Получение:
 
-git clone git@github.com:sysdeep/fsys.git
-cd fsys
-git remote add origin git@github.com:sysdeep/fsys.git
-git checkout -b devel origin/devel
-git checkout -b latest origin/latest
+	git clone git@github.com:sysdeep/fsys.git
+
+
+забираем изменения для devel в ветке devel
+	git checkout devel
+	git pull git@github.com:sysdeep/fsys.git devel
+
+забираем изменения из удалённого репозитория
+	git fetch git@github.com:sysdeep/fsys.git
+
+
+
+#cd fsys
+#git remote add origin git@github.com:sysdeep/fsys.git
+#git checkout -b devel origin/devel
+#git checkout -b latest origin/latest
 
 
 
 
 
-git push git@github.com:sysdeep/fsys.git devel
+
 
