@@ -4,10 +4,11 @@
 import os.path
 
 DEBUG = True
+#DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
-    # ('Your Name', 'your_email@domain.com'),
+     ('sysdeep', 'sysdeep@yandex.ru'),
 )
 
 MANAGERS = ADMINS
@@ -27,7 +28,11 @@ site_media = os.path.join(os.path.dirname(path_f), 'site_media')         #Зде
 
 #db_path_name = os.path.join(site_upload, "report.db")   # полный путь к базе(в site_media)
 
-
+#в дебаге работаем на localhost
+if DEBUG:
+    host_name = 'localhost'
+else:
+    host_name = 'mysql.alwaysdata.com'
 
 DATABASES = {
     'default': {
@@ -35,7 +40,7 @@ DATABASES = {
         'NAME': 'sysdeep_fsys',                      # Or path to database file if using sqlite3.
         'USER': 'sysdeep',                      # Not used with sqlite3.
         'PASSWORD': 'sysvp3whqf',                  # Not used with sqlite3.
-        'HOST': 'localhost',                      # Set to empty string for localhost. Not used with sqlite3.
+        'HOST': host_name,                      # Set to empty string for localhost. Not used with sqlite3.
         'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
     }
 }
