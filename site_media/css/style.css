@@ -81,13 +81,22 @@ div#sidebar {
 	clear: left; 
 	width: 200px; 
 	float: left; 
+	height: 100%;
+	min-height: 400px;	
+	background: url(images/left_tree_200x230.png) bottom center no-repeat; 
 }
 
 div#nav_title{
-    background: url(images/title.png) no-repeat; 
-    padding: 2px 0 0 18px;
+    /*background: url(images/title.png) no-repeat; 
+    height: 35px;
     margin-top: -25px;
-    height: 35px; 
+    padding: 2px 0 0 18px; 
+    height: 75px;*/
+    background: url(images/title_new_year.png) no-repeat; 
+    padding: 40px 0px 0 40px;
+    margin-top: -60px;
+    margin-left: -15px;
+	height: 35px;
     color: #fff;
 }
 /*div.caption { 
@@ -107,6 +116,7 @@ div#nav_title{
 }*/
 
 div#main_nav{
+	/*height: 170px;*/
     /*border: 1px solid #D0C9C3;*/
 }
 
@@ -128,6 +138,16 @@ div#main_nav{
 	padding: 0 5px; 
 }
 
+/*div#sidebar_img_space {
+	height: 100%;
+	float: left;
+}*/
+/*div#sidebar_img {
+	background: url(images/left_tree_200x230.png) bottom center no-repeat; 
+	height: 230px;
+	vertical-align: bottom;
+}*/
+
 /*=== end sidebar ====================================================*/
 
 
@@ -141,6 +161,12 @@ div#center {
 	/*width: 500px;*/ 
 	/*float: left;*/ 
 	margin: 0 0 20px 215px; 
+}
+
+
+div#main_content {
+	background: url(images/right_tree.png) bottom right no-repeat; 
+	min-height: 400px;	
 }
 
 /*#right { 

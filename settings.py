@@ -13,7 +13,7 @@ ADMINS = (
 
 MANAGERS = ADMINS
 
-VERSION = "0.02"
+VERSION = "0.03"
 
 
 path_f = os.path.abspath(__file__)                      #получаем полный path к тек. файлу
