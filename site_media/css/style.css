@@ -169,21 +169,24 @@ div#main_content {
 	min-height: 400px;	
 }
 
-/*#right { 
-	float: right; 
-	width: 200px;
-}*/
-
-/*.date { 
-	font-size: .8em; 
-	border-top: 1px solid #eee; 
-	padding: 5px 0 0; 
+div#opt_right {
+    float: right;
+}
+/*=== blog ===========================================================*/
+div#blog_item {
+    margin: 25px 15px 45px 10px;
 }
 
-*/
+div#blog_title {
+    min-height: 30px;
+}
 
+div#blog_time {
+    float: right;
+    padding-top: 10px;
+}
 
-/*====================================================================*/
+/*=== end blog =======================================================*/
 
 
 /*====================================================================*/
@@ -233,6 +236,7 @@ border: 1px solid #000;
 
 div#add_opt{
 float: right;
+
 }
 /*=== end center =====================================================*/
 

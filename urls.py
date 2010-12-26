@@ -28,6 +28,7 @@ urlpatterns = patterns('',
     (r'^null/', direct_to_template, {'template': 'null_page.html'}),    #пустая страница
     
     (r'^bookmarks/', include('bookmarks.urls')),                        #закладки
+    (r'^blog/', include('blog.urls')),                        #закладки
     
     
     (r'^login/$', 'django.contrib.auth.views.login'),                   #login

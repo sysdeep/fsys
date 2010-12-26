@@ -1,0 +1,32 @@
+{# Notes search #}
+{% extends "blog/blog_base.html" %}
+
+
+{% block сtitle %} <h2>Поиск по записям блога</h2> {% endblock %}
+
+{% block content %}
+    
+    
+    <form id="search-form" method="get" action=".">{% csrf_token %}
+        {{ form.as_table }}
+        <input type="submit" value="Поиск" />
+    </form>
+
+    <br/>
+    
+    
+    {% if notes %}
+        
+        {% for note in notes %}
+            {% include "blog/note_item.html" %}
+        {% endfor %}
+       
+    
+    {% else %}
+        <p>Записи не найдены</p>
+    {% endif %}
+         
+    
+    
+{% endblock %}
+

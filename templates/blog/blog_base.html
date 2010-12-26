@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block title %}Блог{% endblock %}
+{% block head %}Блог{% endblock %}
+{% block external %}
+    
+    {% block ext1 %}
+    {% endblock %}
+{% endblock %}
+
+{% block current_blog %} class="current" {% endblock %}
+{% block nav_title %}Блог{% endblock %}
+
+{% block nav_items %}
+    <ul>
+        {% if user.is_authenticated %}
+           <li><a href="/blog/user/{{ user.username }}">Мои записи</a></li> 
+           <li><a href="/blog/save/">Добавить запись</a></li> 
+        {% endif %}
+        
+        {#<li><a href="/null/">----------</a></li>#}
+        <li><a href="/blog/">Блог главная</a></li>
+        <li><a href="/blog/search/">Поиск</a></li>
+        <li><a href="/blog/tag/">Облако тэгов</a></li>
+        {#<li><a href="/blog/popular/">Популярные</a></li>#}{#пока отключим#}
+    </ul>
+{% endblock %}
+
+
+{% block main_content %}
+   
+    
+    <div id="content_title">{% block сtitle %}{% endblock %}</div>
+    <div id="content_items">
+    
+        {% block content %}<!-- content -->{% endblock %}
+        
+    </div>
+ 
+{% endblock %}
+
+
+
+
+

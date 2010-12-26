@@ -47,14 +47,15 @@
 {#-- header -----------------------------------------------------------#}
 <div id="header">
    
-    <!--<div id="user_menu">
+    <div id="user_menu">
         {% if user.is_authenticated %}
             {{ user.username }} (<a href="/logout">выход</a>)
         {% else %}
-            <a href="/login/">вход</a> |
-            <a href="/register/">регистрация</a>
+            <a href="/login/">вход</a> 
+            <!--|
+            <a href="/register/">регистрация</a>-->
         {% endif %}
-    </div>-->
+    </div>
    
    
    
@@ -83,6 +84,7 @@
     <ul id="menu">
         <li><a {% block current_main %}{% endblock %} href="/">Главная</a></li>
         {#<li><a {% block current_bookmarks %}{% endblock %} href="/bookmarks/">Закладки</a></li>#}
+        <li><a {% block current_blog %}{% endblock %} href="/blog/">Блог</a></li>
         <li><a {% block current_about %}{% endblock %} href="/about/">О проекте</a></li>
     </ul>
     

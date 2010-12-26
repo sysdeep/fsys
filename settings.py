@@ -37,13 +37,27 @@ else:
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'sysdeep_fsys',                      # Or path to database file if using sqlite3.
-        'USER': 'sysdeep',                      # Not used with sqlite3.
-        'PASSWORD': 'sysvp3whqf',                  # Not used with sqlite3.
-        'HOST': host_name,                      # Set to empty string for localhost. Not used with sqlite3.
-        'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
+       'NAME': 'sysdeep_fsys',                      # Or path to database file if using sqlite3.
+       'USER': 'sysdeep',                      # Not used with sqlite3.
+       'PASSWORD': 'sysvp3whqf',                  # Not used with sqlite3.
+       'HOST': host_name,                      # Set to empty string for localhost. Not used with sqlite3.
+       'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
     }
 }
+
+
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
+#        'NAME': 'sysdeep_fsys',                      # Or path to database file if using sqlite3.
+#        'USER': 'sysdeep',                      # Not used with sqlite3.
+#        'PASSWORD': 'sysvp3whqf',                  # Not used with sqlite3.
+#        'HOST': host_name,                      # Set to empty string for localhost. Not used with sqlite3.
+#        'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
+#    }
+#}
+
+
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
@@ -56,7 +70,7 @@ TIME_ZONE = 'Europe/Moskow'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ru-RU'
 
 SITE_ID = 1
 
@@ -121,6 +135,7 @@ INSTALLED_APPS = (
     
     
     #'bookmarks',                    #закладки
+    'blog',
     
     'tags',                                                      #дополнительные тэги
 

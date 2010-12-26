@@ -1,0 +1,28 @@
+{# bookmarks user_page #}
+{% extends "blog/blog_base.html" %}
+
+
+{% block сtitle %} <h2>Записи пользователя <span class="color_title">{{ username }}</span></h2> {% endblock %}
+
+{% block content %}
+    <!--<div id="add_opt">
+        <a href="/blog/save/">Добавить запись</a>
+    </div>-->
+    
+    {% if notes %}
+        
+        {% for note in notes %}
+                {% include "blog/note_item.html" %}
+        {% endfor %}
+        </ul>
+    
+    {% else %}
+        <p>Записей нет. <a href="/blog/save/">Добавить запись</a></p>
+    {% endif %}
+         
+    
+    
+{% endblock %}
+
+
+

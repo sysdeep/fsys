@@ -1,0 +1,47 @@
+<div id="blog_item">
+                    <div id="blog_title">
+                        <div id="blog_time">{{ note.time_c }}</div>
+                        <div id="title_text">
+                            {% if show_link %}
+                                <h3><a href="/blog/note/{{ note.id }}">{{ note.title }}</a></h3>
+                            {% else %}
+                                <!--<a href="/blog/user/{{ user.name }}"><<назад</a>-->
+                            {% endif %}
+                        </div>
+                        
+                    </div>
+                    
+                    <div id="blog_desc">     
+                        {% if show_link %}
+                            {% autoescape off %}{{ note.desc|truncatewords_html:30 }}{% endautoescape %}
+                        {% else %}
+                            {% autoescape off %}{{ note.desc }}{% endautoescape %}
+                        {% endif %}
+                    </div>
+                    
+                    <div id="blog_tags">
+                    Тэги:
+                    {% if note.tag_set.all %}
+                    <ul class="tags">
+                        {% for tag in note.tag_set.all %}
+                        <li><a href="/blog/tag/{{ tag.name }}/">{{ tag.name }}</a></li>
+                        {% endfor %}
+                    </ul>
+                    {% else %}
+                        -
+                    {% endif %}
+                    </div>
+                    <div id="opt_right">
+                        {% if user.is_authenticated %}
+                            [<a href="/blog/save/?id={{ note.id }}">изменить</a> |
+                            <a href="/blog/safe_delete/?id={{ note.id }}">удалить</a>
+                            ]
+                        {% endif %}
+                    </div>
+                    <div id="opt_left">
+                        {% if show_link %}
+                            <a href="/blog/note/{{ note.id }}">Читать далее >></a>
+                        {% else %}
+                        {% endif %}
+                    </div>
+                </div>
