@@ -1,0 +1,23 @@
+{# blog tag_page #}
+{% extends "blog/blog_base.html" %}
+
+
+{% block сtitle %} <h2>Закладки c тэгом <span class="color_title">{{ tag_name }}</span></h2> {% endblock %}
+
+{% block content %}
+    
+    {% if notes %}
+        
+        {% for note in notes %}
+            {% include "blog/note_item.html" %}
+        {% endfor %}
+        
+    
+    {% else %}
+        <p>Закладок с тэгом {{ tag_name }} - не найдено, а поэтому есть какая-то ошибка. Пожалуйста свяжитесь с администратором сервиса.</p>
+    {% endif %}
+         
+    
+    
+{% endblock %}
+

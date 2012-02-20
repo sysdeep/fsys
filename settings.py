@@ -4,15 +4,16 @@
 import os.path
 
 DEBUG = True
+#DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
-    # ('Your Name', 'your_email@domain.com'),
+     ('sysdeep', 'sysdeep@yandex.ru'),
 )
 
 MANAGERS = ADMINS
 
-VERSION = "0.01"
+VERSION = "0.03"
 
 
 path_f = os.path.abspath(__file__)                      #получаем полный path к тек. файлу
@@ -25,20 +26,40 @@ site_media = os.path.join(os.path.dirname(path_f), 'site_media')         #Зде
 
 #backup_dir = os.path.join(b_dir, "BackUp")              #Backup
 
-#db_path_name = os.path.join(site_upload, "report.db")   # полный путь к базе(в site_media)
+db_path_name = os.path.join(os.path.dirname(path_f), "local_db.db")   # полный путь к базе(в site_media)
 
+print db_path_name
+
+#в дебаге работаем на localhost
+if DEBUG:
+    host_name = 'localhost'
+else:
+    host_name = 'mysql.alwaysdata.com'
+
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
+#       'NAME': 'sysdeep_fsys',                      # Or path to database file if using sqlite3.
+#       'USER': 'sysdeep',                      # Not used with sqlite3.
+#      'PASSWORD': 'sysvp3whqf',                  # Not used with sqlite3.
+#       'HOST': host_name,                      # Set to empty string for localhost. Not used with sqlite3.
+#       'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
+#    }
+#}
 
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'sysdeep_fsys',                      # Or path to database file if using sqlite3.
-        'USER': 'sysdeep',                      # Not used with sqlite3.
-        'PASSWORD': 'sysvp3whqf',                  # Not used with sqlite3.
-        'HOST': 'localhost',                      # Set to empty string for localhost. Not used with sqlite3.
-        'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
+        'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': db_path_name,                      # Or path to database file if using sqlite3.
+#        'USER': 'sysdeep',                      # Not used with sqlite3.
+#        'PASSWORD': 'sysvp3whqf',                  # Not used with sqlite3.
+#        'HOST': host_name,                      # Set to empty string for localhost. Not used with sqlite3.
+#        'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
     }
 }
+
+
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
@@ -47,11 +68,12 @@ DATABASES = {
 # timezone as the operating system.
 # If running in a Windows environment this must be set to the same as your
 # system time zone.
-TIME_ZONE = 'Europe/Moskow'
+#TIME_ZONE = 'Europe/Moskow'
+TIME_ZONE = ''
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ru-RU'
 
 SITE_ID = 1
 
@@ -110,12 +132,13 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.sites',
     'django.contrib.messages',
-    'django.contrib.comments',
+    #'django.contrib.comments',
     # Uncomment the next line to enable the admin:
     # 'django.contrib.admin',
     
     
-    'bookmarks',                    #закладки
+    #'bookmarks',                    #закладки
+    'blog',
     
     'tags',                                                      #дополнительные тэги
 

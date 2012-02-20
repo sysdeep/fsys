@@ -1,0 +1,17 @@
+{# tag_cloud_page #}
+{% extends "blog/blog_base.html" %}
+
+
+{% block сtitle %} <h2>Облако тэгов</h2> {% endblock %}
+
+{% block content %}
+    <br/>
+    <div id="tag_cloud">
+        {% for tag in tags %}
+            <a href="/blog/tag/{{ tag.name }}/" class="tag-cloud-{{ tag.weight }}">{{ tag.name }}</a>
+        {% endfor %}
+    </div>     
+    
+    
+{% endblock %}
+

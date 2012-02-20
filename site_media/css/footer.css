@@ -1,0 +1,32 @@
+/*
+    footer.css
+*/
+
+
+
+
+
+div#footer { 
+	font-size: .84em; 
+	/*clear: both; */
+	padding: 5px; 
+	background: #eee; 
+}
+
+div#add_info_left{
+    /*text-align: left;*/
+        float: left;
+}
+
+div#copyright{
+    text-align: right;
+
+}
+
+div#version {
+    text-align: right;
+}
+
+/*#footer a { 
+	color: #444; 
+}*/

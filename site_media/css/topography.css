@@ -1,0 +1,90 @@
+/*
+    topography.css
+*/
+
+body { 
+	font: .8em Tahoma, "Trebuchet MS", Tahoma, sans-serif; 
+	line-height: 1.6em; 
+	background: #fff url(images/bg.gif) repeat-x; 
+	color: /*#8E8E91*/ #36322b;
+}
+
+
+/*=== параграфы ======================================================*/
+p { 
+	margin: 0 0 15px 0; 
+}
+
+#logo p { 
+	margin: 0; 
+}
+
+.caption p { 
+	margin: 0; 
+}
+/*====================================================================*/
+
+/*=== заголовки ======================================================*/
+h1 { 
+	font: normal 2.8em Georgia, "Times New Roman", Arial; 
+	color: #444; 
+}
+
+h2 { 
+	font: normal 1.7em Georgia, "Times New Roman", Arial; 
+	margin: 0 0 10px; 
+	padding: 0 0 3px; 
+	color: #333; 
+	border-bottom: 1px solid #eee; 
+}
+
+h3 { 
+	font: normal 1.7em Georgia, "Times New Roman", Arial; 
+	margin: 0 0 10px; 
+	padding: 0 0 3px; 
+	color: #333; 
+	
+}
+/*====================================================================*/
+
+
+/*=== links ==========================================================*/
+a {	
+	color: #EB0000;	
+	background: inherit; 
+	text-decoration: none; 
+}
+
+a:hover { 
+	color: #808080; 
+	background: inherit; 
+	text-decoration: underline; 
+}
+
+a.no_style{
+    color: #444;
+    text-decoration: none;	
+}
+
+/*====================================================================*/
+
+
+/*=== списки =========================================================*/
+.content ul {
+/*-webkit-padding-start: 40px;*/
+list-style-type : disc;
+display: block;
+margin: 10px 25px;
+}
+
+.content li {
+margin: 5px;
+}
+/*====================================================================*/
+
+
+/*=== other ==========================================================*/
+.clear { 
+	clear: both; 
+}
+/*====================================================================*/

@@ -16,6 +16,9 @@
     {# jquery #}
     <script src="/site_media/js/jquery.js" type="text/javascript"></script>
     
+    {# скругление уголков #}
+    <script src="/site_media/js/jquery.corner.js" type="text/javascript"></script>
+    
     {# редактор #}
     {#<script type="text/javascript" src="/site_media/js/tiny_mce/tiny_mce.js"></script> #}
     
@@ -27,6 +30,13 @@
     
     {# для дополнительных инклудов #}
     {% block external %}{% endblock %}
+    
+    
+    
+    
+    <script type="text/javascript" >
+        $('.box').corner('3px');
+    </script>
    
 </head>
 
@@ -37,14 +47,18 @@
 {#-- header -----------------------------------------------------------#}
 <div id="header">
    
-    <div id="user_menu" style="float: right;">
+    <div id="user_menu">
         {% if user.is_authenticated %}
             {{ user.username }} (<a href="/logout">выход</a>)
         {% else %}
-            <a href="/login/">вход</a> |
-            <a href="/register/">регистрация</a>
+            <a href="/login/">вход</a> 
+            <!--|
+            <a href="/register/">регистрация</a>-->
         {% endif %}
     </div>
+   
+   
+   
    
     <!--<div id="h_content" >
         <div id="logo"><a href="/" title="Главная"><img src="/site_media/images/logo.png" alt="Comcon"/></a></div>
@@ -64,12 +78,13 @@
     </div>-->
     
     <div id="logo">
-        <p>это другая жизнь...</p>
-        <h1>Another Life...</h1>
+        <p>другая жизнь...</p>
+        <h1><a class="no_style" href="/">Another Life...</a></h1>
     </div>
     <ul id="menu">
         <li><a {% block current_main %}{% endblock %} href="/">Главная</a></li>
-        <li><a {% block current_bookmarks %}{% endblock %} href="/bookmarks/">Закладки</a></li>
+        {#<li><a {% block current_bookmarks %}{% endblock %} href="/bookmarks/">Закладки</a></li>#}
+        <li><a {% block current_blog %}{% endblock %} href="/blog/">Блог</a></li>
         <li><a {% block current_about %}{% endblock %} href="/about/">О проекте</a></li>
     </ul>
     
@@ -87,13 +102,15 @@
   
     <div id="sidebar">
         <div id="main_nav">
-            <div id="nav_title" class="caption">
-                {% block nav_title %}{% endblock %}
-            </div>
+            
             <div id="nav_items" class="box">
+                <div id="nav_title" class="caption">
+                    {% block nav_title %}{% endblock %}
+                </div>
                 {% block nav_items %}{% endblock %}
             </div>
         </div>
+        
     </div>
     
     <div id="center">
@@ -111,8 +128,11 @@
 
 {#-- footer -----------------------------------------------------------#}
     <div id="footer">
-        <div id="fl">
-            <p>&copy; Copyright 2010 Deep Studio<p>
+        <div id="add_info_left">
+            Хостинг предоставлен <a href="http://www.alwaysdata.com/" >alwaysdata.com</a>
+        </div>
+        <div id="copyright">
+            &copy; Copyright 2010 Deep Studio
         </div>
         
         {% load extras %} {# мой обработчик шаблона - пока через фильтр #}

@@ -4,7 +4,7 @@ from django.views.generic.simple import direct_to_template
 #import os.path
 #from settings import site_media#, site_upload, backup_dir
 
-from bookmarks.views import main_page, user_page, bookmark_save_page, tag_page, tag_cloud_page, search_page, bookmark_vote_page, popular_page, bookmark_page
+from bookmarks.views import main_page, user_page, bookmark_save_page, tag_page, tag_cloud_page, search_page, bookmark_vote_page, popular_page, bookmark_page, bookmark_safe_delete_page
 
 # Uncomment the next two lines to enable the admin:
 # from django.contrib import admin
@@ -32,8 +32,9 @@ urlpatterns = patterns('',
     (r'^search/$', search_page),                                        #поиск
     (r'^popular/$', popular_page),                                      #популярные
     
-    (r'^bookmark/(\d+)/$', bookmark_page),
-
+    (r'^bookmark/(\d+)/$', bookmark_page),                              #страница 1 закладки
+    
+    (r'^safe_delete/$', bookmark_safe_delete_page),                     #безопасное удаление
 
 
    

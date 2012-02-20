@@ -1,0 +1,83 @@
+{# bookmarks main_page #}
+{% extends "blog/blog_base.html" %}
+
+
+{% block сtitle %} <h2>Блог - главная</h2> {% endblock %}
+
+{% block content %}
+    
+    
+    {% if user.username %}
+        <p>Добро пожаловать <span class="color_title">{{ user.username }}</span> в свой блог.</p>
+    {% else %}
+        <p>Добро пожаловать на страничку блога. О том как стать пользователем читаем <a href="/login_help/">тут</a>.</p>
+    {% endif %}
+    
+    
+    
+    
+    <h2>Последние записи</h2>
+            
+    
+        {% if shared_notes %}{# если есть закладки #}
+            
+                {% for shared_note in shared_notes %}
+                    
+                    
+                    <div id="blog_item">
+                    <div id="blog_title">
+                        <div id="blog_time">{{ shared_note.note.time_c }}</div>
+                        <div id="title_text">
+                            
+                                <h3><a href="/blog/note/{{ shared_note.note.id }}">{{ shared_note.note.title }}</a></h3>
+                            
+                              
+                        </div>
+                        
+                    </div>
+                    
+                    <div id="blog_desc">     
+                        
+                            {% autoescape off %}{{ shared_note.note.desc|truncatewords_html:30 }}{% endautoescape %}
+                       
+                    </div>
+                    
+                    <div id="blog_tags">
+                    Тэги:
+                    {% if shared_note.note.tag_set.all %}
+                    <ul class="tags">
+                        {% for tag in shared_note.note.tag_set.all %}
+                        <li><a href="/blog/tag/{{ tag.name }}/">{{ tag.name }}</a></li>
+                        {% endfor %}
+                    </ul>
+                    {% else %}
+                        -
+                    {% endif %}
+                    </div>
+                    <div id="opt_right">
+                        
+                    </div>
+                    <div id="opt_left">
+                       
+                            <a href="/blog/note/{{ shared_note.note.id }}">Читать далее >></a>
+                       
+                    </div>
+                </div>
+                    
+                    
+                    
+                    
+                    
+                {% endfor %}
+           
+        {% else %}{# если нет #}
+            <p>Записей нет.</p>
+        {% endif %}
+
+    
+    
+    
+    
+{% endblock %}
+
+

@@ -1,0 +1,17 @@
+{# blog safe_delete_page #}
+{% extends "blog/blog_base.html" %}
+
+
+{% block сtitle %} <h2>Удаление записи <span class="color_title">{{ note.title }}</span></h2> {% endblock %}
+
+{% block content %}
+    
+    <p>Вы собираетесь удалить запись <span class="color_title">{{ note.title }}</span>, если Вы уверены - подтвердите удаление.</p>
+    <p><a href="/blog/delete/?id={{ note.id }}" title="Удалить запись">Удалить</a></p>
+    
+    
+    
+{% endblock %}
+
+
+

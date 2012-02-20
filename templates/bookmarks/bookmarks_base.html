@@ -11,17 +11,12 @@
         {% if user.is_authenticated %}
            <li><a href="/bookmarks/user/{{ user.username }}">Мои закладки</a></li> 
            <li><a href="/bookmarks/save/">Добавить закладку</a></li> 
-        {% else %}
-            
-        
-        <li><a href="/null/">---</a></li>
-        <li><a href="/null/">---</a></li>
         {% endif %}
         
         {#<li><a href="/null/">----------</a></li>#}
         <li><a href="/bookmarks/search/">Поиск</a></li>
         <li><a href="/bookmarks/tag/">Облако</a></li>
-        <li><a href="/bookmarks/popular/">Популярные</a></li>
+        {#<li><a href="/bookmarks/popular/">Популярные</a></li>#}{#пока отключим#}
     </ul>
 {% endblock %}
 

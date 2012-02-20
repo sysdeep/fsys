@@ -1,0 +1,50 @@
+Set_Up settings
+
+git config --global user.name "Your Name"
+git config --global user.email sysdeep@yandex.ru
+
+==============================================
+[alias]
+    co = checkout
+    ci = commit
+    st = status
+    br = branch
+    hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+    type = cat-file -t
+    dump = cat-file -p
+==============================================
+
+
+
+        
+git clone "git_repo"
+cd "git_repo"
+git remote add origin "git_repo"
+
+
+Pull:
+git pull origin master
+
+Push:
+git push origin master
+
+
+
+Windows:
+add:
+==============================================
+[core]
+        quotepath = false 
+        pager = cat|more.com
+        editor = "Editor_in_path"
+        
+#[i18n]
+#       commitencoding = cp1251
+#       logoutputencoding = cp866
+==============================================
+
+
+
+
+Sources:
+http://habrahabr.ru/blogs/Git/74839/

@@ -1,25 +1,25 @@
-{# search #}
+{# bookmarks search #}
 {% extends "bookmarks/bookmarks_base.html" %}
 
 
-{% block сtitle %} <h2>Закладки c тэгом {{ tag_name }}</h2> {% endblock %}
+{% block сtitle %} <h2>Поиск по закладкам</h2> {% endblock %}
 
 {% block content %}
     
     
     <form id="search-form" method="get" action=".">{% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit" value="search" />
+        {{ form.as_table }}
+        <input type="submit" value="Поиск" />
     </form>
 
-    
+    <br/>
     
     
     {% if bookmarks %}
         <ul>
         {% for bookmark in bookmarks %}
-            <li><a href="{{ bookmark.link.url }}">{{ bookmark.title }}</a></li>
-                Tags:
+            <li><a href="{{ bookmark.link.url }}"><b>{{ bookmark.title }}</b></a></li>
+                Тэги:
                 {% if bookmark.tag_set.all %}
                 <ul class="tags">
                     {% for tag in bookmark.tag_set.all %}
@@ -33,22 +33,10 @@
         </ul>
     
     {% else %}
-        <p>No bookmark found</p>
+        <p>Закладки не найдены</p>
     {% endif %}
          
     
     
 {% endblock %}
 
-
-{% block add_content %}
-
-    <!--<h2>Примечания:</h2>
-    <ul style="width: 100%">  
-        <li>На этой странице представлен список поездок, которые совершал заданный пользователь.</li>
-        <li>При щелчке на имени завода произойдет выборка поездок по этому заводу.</li>
-        <li>Для изменений данных об объекте необходимо щелкнуть по надписи "Изменить запись".</li>
-        <li>При щелчке на надписи "Удалить запись" - произойдет удаление записи из базы данных.</li>
-    </ul>-->
-    
-{% endblock %}
