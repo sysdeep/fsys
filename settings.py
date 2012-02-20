@@ -26,7 +26,9 @@ site_media = os.path.join(os.path.dirname(path_f), 'site_media')         #Зде
 
 #backup_dir = os.path.join(b_dir, "BackUp")              #Backup
 
-#db_path_name = os.path.join(site_upload, "report.db")   # полный путь к базе(в site_media)
+db_path_name = os.path.join(os.path.dirname(path_f), "local_db.db")   # полный путь к базе(в site_media)
+
+print db_path_name
 
 #в дебаге работаем на localhost
 if DEBUG:
@@ -34,28 +36,28 @@ if DEBUG:
 else:
     host_name = 'mysql.alwaysdata.com'
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-       'NAME': 'sysdeep_fsys',                      # Or path to database file if using sqlite3.
-       'USER': 'sysdeep',                      # Not used with sqlite3.
-       'PASSWORD': 'sysvp3whqf',                  # Not used with sqlite3.
-       'HOST': host_name,                      # Set to empty string for localhost. Not used with sqlite3.
-       'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
-    }
-}
-
-
 #DATABASES = {
 #    'default': {
-#        'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-#        'NAME': 'sysdeep_fsys',                      # Or path to database file if using sqlite3.
+#        'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
+#       'NAME': 'sysdeep_fsys',                      # Or path to database file if using sqlite3.
+#       'USER': 'sysdeep',                      # Not used with sqlite3.
+#      'PASSWORD': 'sysvp3whqf',                  # Not used with sqlite3.
+#       'HOST': host_name,                      # Set to empty string for localhost. Not used with sqlite3.
+#       'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
+#    }
+#}
+
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': db_path_name,                      # Or path to database file if using sqlite3.
 #        'USER': 'sysdeep',                      # Not used with sqlite3.
 #        'PASSWORD': 'sysvp3whqf',                  # Not used with sqlite3.
 #        'HOST': host_name,                      # Set to empty string for localhost. Not used with sqlite3.
 #        'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
-#    }
-#}
+    }
+}
 
 
 
@@ -66,7 +68,8 @@ DATABASES = {
 # timezone as the operating system.
 # If running in a Windows environment this must be set to the same as your
 # system time zone.
-TIME_ZONE = 'Europe/Moskow'
+#TIME_ZONE = 'Europe/Moskow'
+TIME_ZONE = ''
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
