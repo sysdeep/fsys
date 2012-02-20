@@ -84,15 +84,18 @@ def note_save_page(request):
 				
 			note.title = form.cleaned_data["title"]
 			note.desc = form.cleaned_data["desc"]
+			note.save()             #сохраняем
+
+
 
 			tag_names = form.cleaned_data["tags"].split()   			#список тегов
+			print tag_names
 			for tag_name in tag_names:
 				tag, dummy = Tag.objects.get_or_create(
 					name = tag_name
 				)
-				note.tag_set.add(tag)
-			
-			note.save()             #сохраняем
+						
+			note.tag_set.add(tag)
             
                 
             #Расшаривание
@@ -104,7 +107,7 @@ def note_save_page(request):
             
             
             
-            
+            # прыгаем на запись
 			return HttpResponseRedirect('/blog/user/%s/' % request.user.username)
             
     elif 'id' in request.GET:
@@ -221,7 +224,7 @@ def tag_cloud_page(request):
         if tag.count < min_count:
             min_count = tag.count
         if max_count < tag.count:
-            max_count = tag_count
+            max_count = tag.count
     #диапазон
     range = float(max_count-min_count)
     if range == 0.0:

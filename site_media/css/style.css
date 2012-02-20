@@ -83,20 +83,21 @@ div#sidebar {
 	float: left; 
 	height: 100%;
 	min-height: 400px;	
-	background: url(images/left_tree_200x230.png) bottom center no-repeat; 
+	/*background: url(images/left_tree_200x230.png) bottom center no-repeat; */
 }
 
 div#nav_title{
-    /*background: url(images/title.png) no-repeat; 
+    background: url(images/title.png) no-repeat; 
     height: 35px;
     margin-top: -25px;
     padding: 2px 0 0 18px; 
-    height: 75px;*/
-    background: url(images/title_new_year.png) no-repeat; 
+    /*height: 75px;*/
+    /*=== New year ===*/
+    /*background: url(images/title_new_year.png) no-repeat; 
     padding: 40px 0px 0 40px;
     margin-top: -60px;
     margin-left: -15px;
-	height: 35px;
+	height: 35px;*/
     color: #fff;
 }
 /*div.caption { 
@@ -165,7 +166,7 @@ div#center {
 
 
 div#main_content {
-	background: url(images/right_tree.png) bottom right no-repeat; 
+	/*background: url(images/right_tree.png) bottom right no-repeat; */
 	min-height: 400px;	
 }
 

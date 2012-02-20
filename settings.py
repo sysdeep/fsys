@@ -28,7 +28,7 @@ site_media = os.path.join(os.path.dirname(path_f), 'site_media')         #Зде
 
 db_path_name = os.path.join(os.path.dirname(path_f), "local_db.db")   # полный путь к базе(в site_media)
 
-print db_path_name
+
 
 #в дебаге работаем на localhost
 if DEBUG:
