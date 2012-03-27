@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Django settings for fsys project.
+# Django settings for djalife project.
 
 import os.path
 
@@ -19,14 +19,20 @@ VERSION = "0.03"
 path_f = os.path.abspath(__file__)                      #получаем полный path к тек. файлу
 
 b_dir = os.path.dirname(os.path.dirname(path_f))        #два раза поднимаемся выше
+#b2_dir = os.path.dirname(b_dir)        				#два раза поднимаемся выше
 
-site_media = os.path.join(os.path.dirname(path_f), 'site_media')         #Здесь все статические файлы(стили, js)
+print b_dir
+#print b2_dir
+
+#site_media = os.path.join(os.path.dirname(path_f), 'site_media')         #Здесь все статические файлы(стили, js)
+site_media = os.path.join(b_dir, 'site_media')         	#Здесь все статические файлы(стили, js)
 
 #site_upload = os.path.join(b_dir, 'upload')             #Здесь все загружаемые и динамичные
 
 #backup_dir = os.path.join(b_dir, "BackUp")              #Backup
 
-db_path_name = os.path.join(os.path.dirname(path_f), "local_db.db")   # полный путь к базе(в site_media)
+#db_path_name = os.path.join(os.path.dirname(path_f), "local_db.db")   # полный путь к базе(в site_media)
+db_path_name = os.path.join(b_dir, "local_db.db")   # полный путь к базе(в site_media)
 
 
 
@@ -68,11 +74,13 @@ DATABASES = {
 # timezone as the operating system.
 # If running in a Windows environment this must be set to the same as your
 # system time zone.
+#TIME_ZONE = 'America/Chicago'
 #TIME_ZONE = 'Europe/Moskow'
 TIME_ZONE = ''
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
+#LANGUAGE_CODE = 'en-us'
 LANGUAGE_CODE = 'ru-RU'
 
 SITE_ID = 1
@@ -94,10 +102,35 @@ MEDIA_ROOT = ''
 # Examples: "http://media.lawrence.com", "http://example.com/media/"
 MEDIA_URL = ''
 
+# Absolute path to the directory static files should be collected to.
+# Don't put anything in this directory yourself; store your static files
+# in apps' "static/" subdirectories and in STATICFILES_DIRS.
+# Example: "/home/media/media.lawrence.com/static/"
+STATIC_ROOT = ''
+
+# URL prefix for static files.
+# Example: "http://media.lawrence.com/static/"
+STATIC_URL = '/static/'
+
 # URL prefix for admin media -- CSS, JavaScript and images. Make sure to use a
 # trailing slash.
 # Examples: "http://foo.com/media/", "/media/".
 ADMIN_MEDIA_PREFIX = '/media/'
+
+# Additional locations of static files
+STATICFILES_DIRS = (
+    # Put strings here, like "/home/html/static" or "C:/www/django/static".
+    # Always use forward slashes, even on Windows.
+    # Don't forget to use absolute paths, not relative paths.
+)
+
+# List of finder classes that know how to find static files in
+# various locations.
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+#    'django.contrib.staticfiles.finders.DefaultStorageFinder',
+)
 
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = '!!d$u-hp6ayq4r&i^4k0x*z0*mp7ka#hx263ct&o6s*t3fkw5='
@@ -117,13 +150,13 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
 )
 
-ROOT_URLCONF = 'urls'
+ROOT_URLCONF = 'djalife.urls'
 
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    os.path.join(os.path.dirname(__file__), 'templates'),
+    os.path.join(b_dir, 'templates'),
 )
 
 INSTALLED_APPS = (
@@ -132,6 +165,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.sites',
     'django.contrib.messages',
+    'django.contrib.staticfiles',
     #'django.contrib.comments',
     # Uncomment the next line to enable the admin:
     # 'django.contrib.admin',
@@ -147,3 +181,26 @@ INSTALLED_APPS = (
 
 LOGIN_URL = '/login/'
 
+
+# A sample logging configuration. The only tangible logging
+# performed by this configuration is to send an email to
+# the site admins on every HTTP 500 error.
+# See http://docs.djangoproject.com/en/dev/topics/logging for
+# more details on how to customize your logging configuration.
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'mail_admins': {
+            'level': 'ERROR',
+            'class': 'django.utils.log.AdminEmailHandler'
+        }
+    },
+    'loggers': {
+        'django.request': {
+            'handlers': ['mail_admins'],
+            'level': 'ERROR',
+            'propagate': True,
+        },
+    }
+}

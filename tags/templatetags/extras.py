@@ -4,7 +4,7 @@
 
 from django import template
 
-from settings import VERSION
+from djalife.settings import VERSION
 
 register = template.Library()
 

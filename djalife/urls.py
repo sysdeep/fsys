@@ -1,8 +1,15 @@
 # -*- coding: utf-8 -*-
+#--- djlife.urls ---
+
+#--- python
+import os.path
+
+#--- django
 from django.conf.urls.defaults import *
 from django.views.generic.simple import direct_to_template
-import os.path
-from settings import site_media#, site_upload, backup_dir
+
+#--- local
+from settings import site_media
 from views import logout_page, register_page
 
 # Uncomment the next two lines to enable the admin:

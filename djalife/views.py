@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-#views
+#--- djalife.views
 
-#django----------
+#--- django
 from django.http import HttpResponse, Http404, HttpResponseRedirect
 from django.contrib.auth.models import User
 from django.shortcuts import render_to_response  #, get_object_or_404
@@ -10,7 +10,7 @@ from django.contrib.auth import logout
 
 
 
-#local-----------
+#--- local
 #from bookmarks.models import Link
 from forms import RegistrationForm
 

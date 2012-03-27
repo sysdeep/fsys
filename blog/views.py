@@ -89,7 +89,7 @@ def note_save_page(request):
 
 
 			tag_names = form.cleaned_data["tags"].split()   			#список тегов
-			print tag_names
+			
 			for tag_name in tag_names:
 				tag, dummy = Tag.objects.get_or_create(
 					name = tag_name
