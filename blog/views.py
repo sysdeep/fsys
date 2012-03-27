@@ -95,7 +95,7 @@ def note_save_page(request):
 					name = tag_name
 				)
 						
-			note.tag_set.add(tag)
+				note.tag_set.add(tag)
             
                 
             #Расшаривание
